@@ -33,7 +33,6 @@ export default function Home({data, page}) {
   const [answerPreviewHeight, setAnswerPreviewHeight] = useState(100);
   const router = useRouter();
   const query = router.query;
-
   return (
     <Layout>
      <div className='inner-content'>
@@ -57,7 +56,7 @@ export default function Home({data, page}) {
                         </div>
                         <div className="flex flex-wrap h-auto justify-end items-center space-x-8">
                           {
-                            tags.map((el, index) => {
+                            tags.length && tags?.map((el, index) => {
                               return <Link key={index} href={`/questions/tag/${el.slug}`}><a className="rounded-2xl border bg-neutral-100 px-3 py-1 text-sm font-semibold">{el.name}</a></Link>
                             })
                           }

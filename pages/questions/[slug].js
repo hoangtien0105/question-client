@@ -86,7 +86,7 @@ export default function QuestionPost({ data }) {
              </div>
           </div>
         </QuestionHeader>
-        <Comment style={commentStyles} className='flex text-xs pl-10 flex-col comment items-center justify-center'>
+        {/* <Comment style={commentStyles} className='flex text-xs pl-10 flex-col comment items-center justify-center'>
         <h4 className='text-left mt-10 text-lg font-semibold'>Comments</h4>
           {
             commentArrays.map((cmt, index) => {
@@ -100,7 +100,7 @@ export default function QuestionPost({ data }) {
             })
           }
           <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={() => {setIsShowMoreComment(!isShowMoreComment);}}>{isShowMoreComment ? 'Less more' : 'See more'}</button>
-        </Comment>
+        </Comment> */}
         
 
         <Solution>
