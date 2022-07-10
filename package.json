@@ -7,7 +7,8 @@
     "build": "next build",
     "export": "next export",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "startup": "pm2 start npm --name \"question-client\" -- start"
   },
   "dependencies": {
     "@use-gesture/react": "^10.2.16",

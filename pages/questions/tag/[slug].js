@@ -75,14 +75,14 @@ export default function QuestionTags({data}) {
     )
 }
 
-export const getStaticProps = async (ctx) => {
+export const getServerSideProps = async (ctx) => {
     try {
       const posts = await requester.getSync(`/questions/tag/${ctx.params.slug}`)
       return {
         props: {
           data: posts
         },
-        revalidate: 10,
+       
       }
     } catch (err) {
   
@@ -90,23 +90,10 @@ export const getStaticProps = async (ctx) => {
         props: {
   
         },
-        revalidate: 10,
+       
       }
     }
   
   
   }
   
-  export async function getStaticPaths() {
-    const allTags = await requester.getSync(`/getalltagsforseo`);
-    const paths = allTags.map((tag) => {
-      return {
-        params: { slug: tag.slug }
-      }
-    });
-  
-    return {
-      paths,
-      fallback: true
-    }
-  }
