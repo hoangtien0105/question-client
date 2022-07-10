@@ -82,22 +82,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lib_api_requester__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(1408);
 /* harmony import */ var lib_hook__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(9040);
 /* harmony import */ var lib_util__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(9713);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(1664);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(1853);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(6689);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var react_spring__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(4417);
-/* harmony import */ var react_spring__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(react_spring__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var react_topbar_progress_indicator__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(7521);
-/* harmony import */ var react_topbar_progress_indicator__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(react_topbar_progress_indicator__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var react_use__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(9755);
-/* harmony import */ var react_use__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(react_use__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(7518);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_13__);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([lib_hook__WEBPACK_IMPORTED_MODULE_5__]);
-lib_hook__WEBPACK_IMPORTED_MODULE_5__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
+/* harmony import */ var next_seo__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(6641);
+/* harmony import */ var next_seo__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(next_seo__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(1664);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(1853);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(6689);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var react_spring__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(4417);
+/* harmony import */ var react_spring__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(react_spring__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var react_topbar_progress_indicator__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(7521);
+/* harmony import */ var react_topbar_progress_indicator__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(react_topbar_progress_indicator__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var react_use__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(9755);
+/* harmony import */ var react_use__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(react_use__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(7518);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var cheerio__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(295);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([lib_hook__WEBPACK_IMPORTED_MODULE_5__, cheerio__WEBPACK_IMPORTED_MODULE_15__]);
+([lib_hook__WEBPACK_IMPORTED_MODULE_5__, cheerio__WEBPACK_IMPORTED_MODULE_15__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
 
 
@@ -112,8 +115,10 @@ lib_hook__WEBPACK_IMPORTED_MODULE_5__ = (__webpack_async_dependencies__.then ? (
 
 
 
-const QuestionHeader = styled_components__WEBPACK_IMPORTED_MODULE_13___default().div.withConfig({
-    componentId: "sc-c4b0431a-0"
+
+
+const QuestionHeader = styled_components__WEBPACK_IMPORTED_MODULE_14___default().div.withConfig({
+    componentId: "sc-344134f6-0"
 })`
   code{
     padding: 5px;
@@ -122,8 +127,8 @@ const QuestionHeader = styled_components__WEBPACK_IMPORTED_MODULE_13___default()
     border-radius: 3px;
   }
 `;
-const Comment = styled_components__WEBPACK_IMPORTED_MODULE_13___default()(react_spring__WEBPACK_IMPORTED_MODULE_10__.animated.div).withConfig({
-    componentId: "sc-c4b0431a-1"
+const Comment = styled_components__WEBPACK_IMPORTED_MODULE_14___default()(react_spring__WEBPACK_IMPORTED_MODULE_11__.animated.div).withConfig({
+    componentId: "sc-344134f6-1"
 })`
    .comment-item{
     .comment-body{
@@ -136,24 +141,42 @@ const Comment = styled_components__WEBPACK_IMPORTED_MODULE_13___default()(react_
     }
    }
 `;
-const Solution = styled_components__WEBPACK_IMPORTED_MODULE_13___default().div.withConfig({
-    componentId: "sc-c4b0431a-2"
+const Solution = styled_components__WEBPACK_IMPORTED_MODULE_14___default().div.withConfig({
+    componentId: "sc-344134f6-2"
 })`
     
 
 `;
 function QuestionPost({ data  }) {
-    const router = (0,next_router__WEBPACK_IMPORTED_MODULE_8__.useRouter)();
-    const [commentStyles, api] = (0,react_spring__WEBPACK_IMPORTED_MODULE_10__.useSpring)(()=>({
+    var ref;
+    const router = (0,next_router__WEBPACK_IMPORTED_MODULE_9__.useRouter)();
+    const [commentStyles, api] = (0,react_spring__WEBPACK_IMPORTED_MODULE_11__.useSpring)(()=>({
             config: {
                 frequency: 200
             }
         }));
-    const { 0: isShowMoreComment , 1: setIsShowMoreComment  } = (0,react__WEBPACK_IMPORTED_MODULE_9__.useState)(false);
+    const { 0: isShowMoreComment , 1: setIsShowMoreComment  } = (0,react__WEBPACK_IMPORTED_MODULE_10__.useState)(false);
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(components_Layout__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z, {
         children: data ? /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(components_Utils_sharedstyles__WEBPACK_IMPORTED_MODULE_2__/* .QuestionStyled */ .$, {
             className: "question my-5",
             children: [
+                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(next_seo__WEBPACK_IMPORTED_MODULE_7__.NextSeo, {
+                    title: data.title,
+                    description: cheerio__WEBPACK_IMPORTED_MODULE_15__.load((0,html_entities__WEBPACK_IMPORTED_MODULE_3__.decode)(data.content)).text()
+                }),
+                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(next_seo__WEBPACK_IMPORTED_MODULE_7__.QAPageJsonLd, {
+                    mainEntity: {
+                        name: data.title,
+                        text: cheerio__WEBPACK_IMPORTED_MODULE_15__.load((0,html_entities__WEBPACK_IMPORTED_MODULE_3__.decode)(data.content)).text(),
+                        answerCount: ((ref = data.answer) === null || ref === void 0 ? void 0 : ref.length) || 4,
+                        upVoteCount: 500,
+                        suggestedAnswer: data.answer.length ? data.answer.map((el, index)=>({
+                                text: cheerio__WEBPACK_IMPORTED_MODULE_15__.load((0,html_entities__WEBPACK_IMPORTED_MODULE_3__.decode)(el)).text(),
+                                url: `${router.pathname}#solution${index + 1}`
+                            })) : []
+                    }
+                }),
+                console.log(cheerio__WEBPACK_IMPORTED_MODULE_15__.load((0,html_entities__WEBPACK_IMPORTED_MODULE_3__.decode)(data.content)).text()),
                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(QuestionHeader, {
                     className: "flex question-header items-center justify-center",
                     children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
@@ -166,7 +189,7 @@ function QuestionPost({ data  }) {
                                         className: "flex items-center space-x-3",
                                         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                             className: "text-lg font-bold text-slate-700",
-                                            children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_7___default()), {
+                                            children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_8___default()), {
                                                 href: `/questions/${data.slug}`,
                                                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
                                                     children: data.title
@@ -177,7 +200,7 @@ function QuestionPost({ data  }) {
                                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                         className: "flex flex-wrap h-auto justify-end items-center space-x-8",
                                         children: data.tags.map((el, index)=>{
-                                            return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_7___default()), {
+                                            return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_8___default()), {
                                                 href: `/questions/tag/${el.slug}`,
                                                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
                                                     className: "rounded-2xl border bg-neutral-100 px-3 py-1 text-sm font-semibold",
@@ -200,6 +223,7 @@ function QuestionPost({ data  }) {
                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Solution, {
                     children: data.answer.map((ans, index)=>{
                         return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                            id: `solution${index + 1}`,
                             className: "flex mt-5 answer items-center justify-center py-5",
                             children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                                 className: "rounded-xl border p-10 shadow-md w-9/12 bg-white",
@@ -223,7 +247,7 @@ function QuestionPost({ data  }) {
                     })
                 })
             ]
-        }) : /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((react_topbar_progress_indicator__WEBPACK_IMPORTED_MODULE_11___default()), {})
+        }) : /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((react_topbar_progress_indicator__WEBPACK_IMPORTED_MODULE_12___default()), {})
     });
 };
 const getStaticProps = async (ctx)=>{
@@ -278,6 +302,13 @@ module.exports = require("html-entities");
 /***/ ((module) => {
 
 module.exports = require("lodash");
+
+/***/ }),
+
+/***/ 6641:
+/***/ ((module) => {
+
+module.exports = require("next-seo");
 
 /***/ }),
 
@@ -488,6 +519,13 @@ module.exports = require("react/jsx-runtime");
 /***/ ((module) => {
 
 module.exports = require("styled-components");
+
+/***/ }),
+
+/***/ 295:
+/***/ ((module) => {
+
+module.exports = import("cheerio");;
 
 /***/ }),
 

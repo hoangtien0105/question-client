@@ -47,7 +47,11 @@ var Layout = __webpack_require__(2724);
 // EXTERNAL MODULE: external "react-topbar-progress-indicator"
 var external_react_topbar_progress_indicator_ = __webpack_require__(7521);
 var external_react_topbar_progress_indicator_default = /*#__PURE__*/__webpack_require__.n(external_react_topbar_progress_indicator_);
+// EXTERNAL MODULE: external "next-seo"
+var external_next_seo_ = __webpack_require__(6641);
 ;// CONCATENATED MODULE: ./pages/index.js
+
+
 
 
 
@@ -63,7 +67,7 @@ var external_react_topbar_progress_indicator_default = /*#__PURE__*/__webpack_re
 
 const converter = new (external_showdown_default()).Converter();
 const HomePageStyles = external_styled_components_default().div.withConfig({
-    componentId: "sc-afe7946c-0"
+    componentId: "sc-e09c0b56-0"
 })`
 
  
@@ -80,124 +84,133 @@ function Home({ data , page  }) {
     const { 0: answerPreviewHeight , 1: setAnswerPreviewHeight  } = (0,external_react_.useState)(100);
     const router = (0,router_.useRouter)();
     const query = router.query;
-    return /*#__PURE__*/ jsx_runtime_.jsx(Layout/* default */.Z, {
-        children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
-            className: "inner-content",
-            children: [
-                data && page <= 1 ? /*#__PURE__*/ jsx_runtime_.jsx("span", {
-                    className: `pagination-buttons previous bg-stone-500 cursor-not-allowed  hover:bg-stone-500 text-white font-bold py-2 px-4 rounded`,
-                    children: "Previous"
-                }) : /*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
-                    href: `/questions?page=${page - 1}`,
-                    children: /*#__PURE__*/ jsx_runtime_.jsx("a", {
-                        className: `pagination-buttons previous bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded`,
+    return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(Layout/* default */.Z, {
+        children: [
+            /*#__PURE__*/ jsx_runtime_.jsx(external_next_seo_.NextSeo, {
+                twitter: {
+                    cardType: "summary_large_image",
+                    site: "@solutionschecker.com",
+                    handle: "@solutionchecker.com"
+                }
+            }),
+            /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                className: "inner-content",
+                children: [
+                    data && page <= 1 ? /*#__PURE__*/ jsx_runtime_.jsx("span", {
+                        className: `pagination-buttons previous bg-stone-500 cursor-not-allowed  hover:bg-stone-500 text-white font-bold py-2 px-4 rounded`,
                         children: "Previous"
-                    })
-                }),
-                data ? (ref = data.rows) === null || ref === void 0 ? void 0 : ref.map(({ slug , title , tags , answer  }, index)=>{
-                    return /*#__PURE__*/ jsx_runtime_.jsx(jsx_runtime_.Fragment, {
-                        children: /*#__PURE__*/ jsx_runtime_.jsx(sharedstyles/* QuestionStyled */.$, {
-                            className: "question my-5",
-                            children: /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                                className: "flex items-center justify-center",
-                                children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
-                                    className: "rounded-xl border p-5 shadow-md w-9/12 bg-white",
-                                    children: [
-                                        /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
-                                            className: "flex w-full items-center justify-between border-b pb-3",
-                                            children: [
-                                                /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                                                    className: "flex items-center space-x-3",
-                                                    children: /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                                                        className: "text-lg font-bold text-slate-700",
-                                                        children: /*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
-                                                            href: `/questions/${slug}`,
-                                                            children: /*#__PURE__*/ jsx_runtime_.jsx("a", {
-                                                                children: title
+                    }) : /*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
+                        href: `/questions?page=${page - 1}`,
+                        children: /*#__PURE__*/ jsx_runtime_.jsx("a", {
+                            className: `pagination-buttons previous bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded`,
+                            children: "Previous"
+                        })
+                    }),
+                    data ? (ref = data.rows) === null || ref === void 0 ? void 0 : ref.map(({ slug , title , tags , answer  }, index)=>{
+                        return /*#__PURE__*/ jsx_runtime_.jsx(jsx_runtime_.Fragment, {
+                            children: /*#__PURE__*/ jsx_runtime_.jsx(sharedstyles/* QuestionStyled */.$, {
+                                className: "question my-5",
+                                children: /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                    className: "flex items-center justify-center",
+                                    children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                                        className: "rounded-xl border p-5 shadow-md w-9/12 bg-white",
+                                        children: [
+                                            /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                                                className: "flex w-full items-center justify-between border-b pb-3",
+                                                children: [
+                                                    /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                                        className: "flex items-center space-x-3",
+                                                        children: /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                                            className: "text-lg font-bold text-slate-700",
+                                                            children: /*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
+                                                                href: `/questions/${slug}`,
+                                                                children: /*#__PURE__*/ jsx_runtime_.jsx("a", {
+                                                                    children: title
+                                                                })
                                                             })
                                                         })
-                                                    })
-                                                }),
-                                                /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                                                    className: "flex flex-wrap h-auto justify-end items-center space-x-8",
-                                                    children: tags.length && (tags === null || tags === void 0 ? void 0 : tags.map((el, index)=>{
-                                                        return /*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
-                                                            href: `/questions/tag/${el.slug}`,
-                                                            children: /*#__PURE__*/ jsx_runtime_.jsx("a", {
-                                                                className: "rounded-2xl border bg-neutral-100 px-3 py-1 text-sm font-semibold",
-                                                                children: el.name
-                                                            })
-                                                        }, index);
-                                                    }))
-                                                })
-                                            ]
-                                        }),
-                                        /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
-                                            className: "mt-4 mb-6",
-                                            style: {
-                                                height: 100,
-                                                overflow: "auto"
-                                            },
-                                            children: [
-                                                /*#__PURE__*/ jsx_runtime_.jsx("h4", {
-                                                    className: "font-semibold",
-                                                    children: "Solution 1:"
-                                                }),
-                                                /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                                                    className: "text-sm bg-green-100 text-neutral-600",
-                                                    dangerouslySetInnerHTML: {
-                                                        __html: (0,external_html_entities_.decode)(answer[0])
-                                                    }
-                                                })
-                                            ]
-                                        }),
-                                        /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                                            children: /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                                                className: "flex items-center justify-between text-slate-500",
-                                                children: /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                                                    className: "flex space-x-4 md:space-x-8",
-                                                    children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
-                                                        className: "flex cursor-pointer items-center transition hover:text-slate-600",
-                                                        children: [
-                                                            /*#__PURE__*/ jsx_runtime_.jsx("svg", {
-                                                                xmlns: "http://www.w3.org/2000/svg",
-                                                                className: "mr-1.5 h-5 w-5",
-                                                                fill: "none",
-                                                                viewBox: "0 0 24 24",
-                                                                stroke: "currentColor",
-                                                                strokeWidth: "2",
-                                                                children: /*#__PURE__*/ jsx_runtime_.jsx("path", {
-                                                                    strokeLinecap: "round",
-                                                                    strokeLinejoin: "round",
-                                                                    d: "M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"
+                                                    }),
+                                                    /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                                        className: "flex flex-wrap h-auto justify-end items-center space-x-8",
+                                                        children: tags.length && (tags === null || tags === void 0 ? void 0 : tags.map((el, index)=>{
+                                                            return /*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
+                                                                href: `/questions/tag/${el.slug}`,
+                                                                children: /*#__PURE__*/ jsx_runtime_.jsx("a", {
+                                                                    className: "rounded-2xl border bg-neutral-100 px-3 py-1 text-sm font-semibold",
+                                                                    children: el.name
                                                                 })
-                                                            }),
-                                                            /*#__PURE__*/ jsx_runtime_.jsx("span", {
-                                                                children: "4"
-                                                            })
-                                                        ]
+                                                            }, index);
+                                                        }))
+                                                    })
+                                                ]
+                                            }),
+                                            /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                                                className: "mt-4 mb-6",
+                                                style: {
+                                                    height: 100,
+                                                    overflow: "auto"
+                                                },
+                                                children: [
+                                                    /*#__PURE__*/ jsx_runtime_.jsx("h4", {
+                                                        className: "font-semibold",
+                                                        children: "Solution 1:"
+                                                    }),
+                                                    /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                                        className: "text-sm bg-green-100 text-neutral-600",
+                                                        dangerouslySetInnerHTML: {
+                                                            __html: (0,external_html_entities_.decode)(answer[0])
+                                                        }
+                                                    })
+                                                ]
+                                            }),
+                                            /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                                children: /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                                    className: "flex items-center justify-between text-slate-500",
+                                                    children: /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                                        className: "flex space-x-4 md:space-x-8",
+                                                        children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                                                            className: "flex cursor-pointer items-center transition hover:text-slate-600",
+                                                            children: [
+                                                                /*#__PURE__*/ jsx_runtime_.jsx("svg", {
+                                                                    xmlns: "http://www.w3.org/2000/svg",
+                                                                    className: "mr-1.5 h-5 w-5",
+                                                                    fill: "none",
+                                                                    viewBox: "0 0 24 24",
+                                                                    stroke: "currentColor",
+                                                                    strokeWidth: "2",
+                                                                    children: /*#__PURE__*/ jsx_runtime_.jsx("path", {
+                                                                        strokeLinecap: "round",
+                                                                        strokeLinejoin: "round",
+                                                                        d: "M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"
+                                                                    })
+                                                                }),
+                                                                /*#__PURE__*/ jsx_runtime_.jsx("span", {
+                                                                    children: "4"
+                                                                })
+                                                            ]
+                                                        })
                                                     })
                                                 })
                                             })
-                                        })
-                                    ]
+                                        ]
+                                    })
                                 })
-                            })
-                        }, index)
-                    });
-                }) : /*#__PURE__*/ jsx_runtime_.jsx((external_react_topbar_progress_indicator_default()), {}),
-                data && page * 10 - data.count >= 0 ? /*#__PURE__*/ jsx_runtime_.jsx("span", {
-                    className: `pagination-buttons next bg-stone-500 cursor-not-allowed  hover:bg-stone-500 text-white font-bold py-2 px-4 rounded`,
-                    children: "Next"
-                }) : /*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
-                    href: `/questions?page=${page + 1}`,
-                    children: /*#__PURE__*/ jsx_runtime_.jsx("a", {
-                        className: `pagination-buttons next bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded`,
+                            }, index)
+                        });
+                    }) : /*#__PURE__*/ jsx_runtime_.jsx((external_react_topbar_progress_indicator_default()), {}),
+                    data && page * 10 - data.count >= 0 ? /*#__PURE__*/ jsx_runtime_.jsx("span", {
+                        className: `pagination-buttons next bg-stone-500 cursor-not-allowed  hover:bg-stone-500 text-white font-bold py-2 px-4 rounded`,
                         children: "Next"
+                    }) : /*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
+                        href: `/questions?page=${page + 1}`,
+                        children: /*#__PURE__*/ jsx_runtime_.jsx("a", {
+                            className: `pagination-buttons next bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded`,
+                            children: "Next"
+                        })
                     })
-                })
-            ]
-        })
+                ]
+            })
+        ]
     });
 };
 const getStaticProps = async (ctx)=>{
@@ -232,6 +245,14 @@ const getStaticProps = async (ctx)=>{
 
 "use strict";
 module.exports = require("html-entities");
+
+/***/ }),
+
+/***/ 6641:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next-seo");
 
 /***/ }),
 

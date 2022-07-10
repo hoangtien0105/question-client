@@ -4,20 +4,67 @@ exports.id = 888;
 exports.ids = [888];
 exports.modules = {
 
-/***/ 8510:
+/***/ 1040:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "JG": () => (/* binding */ siteDescription),
+/* harmony export */   "aD": () => (/* binding */ siteName),
+/* harmony export */   "or": () => (/* binding */ siteUrl)
 /* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(997);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var highlight_js_styles_vs2015_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8046);
-/* harmony import */ var highlight_js_styles_vs2015_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(highlight_js_styles_vs2015_css__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7518);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
+const siteName = "Solutions Checker";
+const siteDescription = "Find solution for coding, HTML, CSS, JAVASCRIPT, MYSQL, PHP, PYTHON,... quickly.";
+const siteUrl = "https://solutionschecker.com";
+
+
+/***/ }),
+
+/***/ 6350:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  "default": () => (/* binding */ _app)
+});
+
+// EXTERNAL MODULE: external "react/jsx-runtime"
+var jsx_runtime_ = __webpack_require__(997);
+// EXTERNAL MODULE: ./node_modules/highlight.js/styles/vs2015.css
+var vs2015 = __webpack_require__(8046);
+// EXTERNAL MODULE: external "styled-components"
+var external_styled_components_ = __webpack_require__(7518);
+// EXTERNAL MODULE: external "next-seo"
+var external_next_seo_ = __webpack_require__(6641);
+// EXTERNAL MODULE: ./constants/seo.js
+var seo = __webpack_require__(1040);
+;// CONCATENATED MODULE: ./seo.config.js
+
+const SEOConfig = {
+    titleTemplate: `%s | ${seo/* siteName */.aD}`,
+    defaultTile: seo/* siteName */.aD,
+    description: seo/* siteDescription */.JG,
+    openGraph: {
+        type: "website",
+        url: "https://solutionschecker.com",
+        siteName: seo/* siteName */.aD
+    },
+    twitter: {
+        handle: "@solutionschecker.com",
+        site: "@solutionschecker.com",
+        cardType: "summary_large_image"
+    }
+};
+/* harmony default export */ const seo_config = (SEOConfig);
+
+;// CONCATENATED MODULE: ./pages/_app.js
+
+
+
 
 
 
@@ -30,16 +77,21 @@ const theme = {
     }
 };
 function MyApp({ Component , pageProps  }) {
-    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-        children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(styled_components__WEBPACK_IMPORTED_MODULE_2__.ThemeProvider, {
+    return /*#__PURE__*/ jsx_runtime_.jsx(jsx_runtime_.Fragment, {
+        children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)(external_styled_components_.ThemeProvider, {
             theme: theme,
-            children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Component, {
-                ...pageProps
-            })
+            children: [
+                /*#__PURE__*/ jsx_runtime_.jsx(external_next_seo_.DefaultSeo, {
+                    ...seo_config
+                }),
+                /*#__PURE__*/ jsx_runtime_.jsx(Component, {
+                    ...pageProps
+                })
+            ]
         })
     });
 }
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MyApp);
+/* harmony default export */ const _app = (MyApp);
 
 
 /***/ }),
@@ -48,6 +100,14 @@ function MyApp({ Component , pageProps  }) {
 /***/ (() => {
 
 
+
+/***/ }),
+
+/***/ 6641:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next-seo");
 
 /***/ }),
 
@@ -74,7 +134,7 @@ module.exports = require("styled-components");
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = (__webpack_exec__(8510));
+var __webpack_exports__ = (__webpack_exec__(6350));
 module.exports = __webpack_exports__;
 
 })();

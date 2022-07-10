@@ -202,6 +202,13 @@ module.exports = require("lodash");
 
 /***/ }),
 
+/***/ 6641:
+/***/ ((module) => {
+
+module.exports = require("next-seo");
+
+/***/ }),
+
 /***/ 3280:
 /***/ ((module) => {
 
