@@ -12,8 +12,7 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ QuestionTags),
-/* harmony export */   "getStaticPaths": () => (/* binding */ getStaticPaths),
-/* harmony export */   "getStaticProps": () => (/* binding */ getStaticProps)
+/* harmony export */   "getServerSideProps": () => (/* binding */ getServerSideProps)
 /* harmony export */ });
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(997);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
@@ -140,36 +139,20 @@ function QuestionTags({ data  }) {
         }) : /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((react_topbar_progress_indicator__WEBPACK_IMPORTED_MODULE_9___default()), {})
     });
 };
-const getStaticProps = async (ctx)=>{
+const getServerSideProps = async (ctx)=>{
     try {
         const posts = await lib_api_requester__WEBPACK_IMPORTED_MODULE_4__/* ["default"].getSync */ .ZP.getSync(`/questions/tag/${ctx.params.slug}`);
         return {
             props: {
                 data: posts
-            },
-            revalidate: 10
+            }
         };
     } catch (err) {
         return {
-            props: {},
-            revalidate: 10
+            props: {}
         };
     }
 };
-async function getStaticPaths() {
-    const allTags = await lib_api_requester__WEBPACK_IMPORTED_MODULE_4__/* ["default"].getSync */ .ZP.getSync(`/getalltagsforseo`);
-    const paths = allTags.map((tag)=>{
-        return {
-            params: {
-                slug: tag.slug
-            }
-        };
-    });
-    return {
-        paths,
-        fallback: true
-    };
-}
 
 __webpack_async_result__();
 } catch(e) { __webpack_async_result__(e); } });
