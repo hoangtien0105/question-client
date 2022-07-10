@@ -36,4 +36,4 @@ jobs:
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: gh-pages # The branch the action should deploy to.
-        FOLDER: .next/server # The folder the action should deploy.
+        FOLDER: .next/server/pages # The folder the action should deploy.
