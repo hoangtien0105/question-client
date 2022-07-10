@@ -3,6 +3,7 @@ import { QuestionStyled } from 'components/Utils/sharedstyles';
 import { decode } from 'html-entities';
 import requester from 'lib/api/requester';
 import { useQuestions, useQuestionsByTag } from 'lib/hook';
+import { NextSeo } from 'next-seo';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react'
@@ -19,7 +20,10 @@ export default function QuestionTags({data}) {
         {data ? data.rows?.map(({ slug, title, tags, answer }, index) => {
           return (
             <QuestionStyled key={index} className="question my-5">
-              
+              <NextSeo
+        title={`${title} tags`}
+        description={`All questions and solutions for ${title} tags`}
+        />
                 <div className='flex items-center justify-center'>
                   
                   <div className="rounded-xl border p-5 shadow-md w-9/12 bg-white">

@@ -4,6 +4,7 @@ import { decode } from 'html-entities';
 import requester from 'lib/api/requester';
 import { useQuestions, useQuestionsByTag } from 'lib/hook';
 import { useWindowDimensions } from 'lib/util';
+import { NextSeo, QAPageJsonLd } from 'next-seo';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react'
@@ -11,7 +12,7 @@ import { animated, useSpring } from 'react-spring';
 import TopBarProgress from 'react-topbar-progress-indicator';
 import { useMeasure } from 'react-use';
 import styled from 'styled-components';
-
+import * as cheerio from 'cheerio';
 const QuestionHeader = styled.div`
   code{
     padding: 5px;
@@ -46,11 +47,29 @@ export default function QuestionPost({ data }) {
       frequency: 200
     } 
   }));
+  
   const [isShowMoreComment, setIsShowMoreComment] = useState(false);
   return (
     <Layout>
-      {data ? (<QuestionStyled className="question my-5">
 
+      
+
+      {data ? (<QuestionStyled className="question my-5">
+        <NextSeo
+        title={data.title}
+        description={cheerio.load(decode(data.content)).text()}
+        />
+      <QAPageJsonLd mainEntity={{
+        name: data.title,
+        text: cheerio.load(decode(data.content)).text(),
+        answerCount: data.answer?.length || 4,
+        upVoteCount: 500,
+        suggestedAnswer: data.answer.length ? data.answer.map((el, index) => ({
+          text: cheerio.load(decode(el)).text(),
+          url: `${router.pathname}#solution${index+1}`,
+        })) : []
+      }}/>
+      {console.log(cheerio.load(decode(data.content)).text())}
         <QuestionHeader className='flex question-header items-center justify-center'>
           <div className="rounded-xl border p-5 shadow-md w-9/12 bg-white">
             <div className="flex w-full items-center justify-between border-b pb-3">
@@ -97,7 +116,7 @@ export default function QuestionPost({ data }) {
         <Solution>
           {
             data.answer.map((ans, index) => {
-              return <div key={index} className='flex mt-5 answer items-center justify-center py-5'>
+              return <div id={`solution${index+1}`} key={index} className='flex mt-5 answer items-center justify-center py-5'>
               
             <div className="rounded-xl border p-10 shadow-md w-9/12 bg-white">
             <h4 className='text-4xl font-semibold mb-5'>{`Solution ${index + 1}`}</h4>

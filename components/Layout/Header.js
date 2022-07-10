@@ -1,3 +1,5 @@
+import { siteUrl } from 'constants/seo'
+import { LogoJsonLd } from 'next-seo'
 import Link from 'next/link'
 import React from 'react'
 
@@ -9,6 +11,7 @@ export default function Header() {
                 <Link href='/'><a className="flex items-center">
                         <img src="/logo.svg" className="mr-3 h-6 sm:h-9" alt="Solution Checker Logo" />
                         <h4 className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Solution Checker</h4>
+                        <LogoJsonLd logo={'/logo.svg'} url={siteUrl}/>
                     </a>
                 </Link>
                 <div className="flex items-center lg:order-2">

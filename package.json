@@ -8,7 +8,8 @@
     "export": "next export",
     "start": "next start",
     "lint": "next lint",
-    "startup": "pm2 start npm --name \"question-client\" -- start"
+    "startup": "pm2 start npm --name \"question-client\" -- start",
+    "push": "git push https://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@github.com/hoangtien0105/question-client.git"
   },
   "dependencies": {
     "@use-gesture/react": "^10.2.16",
@@ -17,6 +18,7 @@
     "html-entities": "^2.3.3",
     "i": "^0.3.7",
     "next": "12.2.0",
+    "next-seo": "^5.4.0",
     "npm": "^8.13.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",

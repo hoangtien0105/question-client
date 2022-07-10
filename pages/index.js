@@ -13,7 +13,8 @@ import { decode } from 'html-entities'
 import { useRouter } from 'next/router'
 import Layout from '../components/Layout'
 import TopBarProgress from 'react-topbar-progress-indicator'
-
+import { NextSeo } from 'next-seo';
+import { siteDescription, siteName } from 'constants/seo';
 
 const converter = new Showdown.Converter();
 
@@ -35,6 +36,13 @@ export default function Home({data, page}) {
   const query = router.query;
   return (
     <Layout>
+      <NextSeo
+        twitter={{
+          cardType: 'summary_large_image',
+          site:'@solutionschecker.com',
+          handle: '@solutionchecker.com'
+        }}
+      />
      <div className='inner-content'>
             {data && (page <= 1) ? <span className={`pagination-buttons previous bg-stone-500 cursor-not-allowed  hover:bg-stone-500 text-white font-bold py-2 px-4 rounded`}>Previous</span> : <Link href={`/questions?page=${page-1}`} ><a className={`pagination-buttons previous bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded`}>Previous</a></Link>}
             {data ? (data.rows?.map(({ slug, title, tags, answer }, index) => {
