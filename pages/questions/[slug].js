@@ -47,15 +47,6 @@ export default function QuestionPost({ data }) {
     } 
   }));
   const [isShowMoreComment, setIsShowMoreComment] = useState(false);
-  let commentArrays;
-  if(data){
-    if(isShowMoreComment){
-      commentArrays = data.comment;
-    }
-    else{
-      commentArrays = data.comment.slice(0, 3);
-    }
-  }
   return (
     <Layout>
       {data ? (<QuestionStyled className="question my-5">
