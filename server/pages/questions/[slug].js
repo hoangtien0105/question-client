@@ -113,7 +113,7 @@ lib_hook__WEBPACK_IMPORTED_MODULE_5__ = (__webpack_async_dependencies__.then ? (
 
 
 const QuestionHeader = styled_components__WEBPACK_IMPORTED_MODULE_13___default().div.withConfig({
-    componentId: "sc-6e32c308-0"
+    componentId: "sc-c4b0431a-0"
 })`
   code{
     padding: 5px;
@@ -123,7 +123,7 @@ const QuestionHeader = styled_components__WEBPACK_IMPORTED_MODULE_13___default()
   }
 `;
 const Comment = styled_components__WEBPACK_IMPORTED_MODULE_13___default()(react_spring__WEBPACK_IMPORTED_MODULE_10__.animated.div).withConfig({
-    componentId: "sc-6e32c308-1"
+    componentId: "sc-c4b0431a-1"
 })`
    .comment-item{
     .comment-body{
@@ -137,7 +137,7 @@ const Comment = styled_components__WEBPACK_IMPORTED_MODULE_13___default()(react_
    }
 `;
 const Solution = styled_components__WEBPACK_IMPORTED_MODULE_13___default().div.withConfig({
-    componentId: "sc-6e32c308-2"
+    componentId: "sc-c4b0431a-2"
 })`
     
 
@@ -150,14 +150,6 @@ function QuestionPost({ data  }) {
             }
         }));
     const { 0: isShowMoreComment , 1: setIsShowMoreComment  } = (0,react__WEBPACK_IMPORTED_MODULE_9__.useState)(false);
-    let commentArrays;
-    if (data) {
-        if (isShowMoreComment) {
-            commentArrays = data.comment;
-        } else {
-            commentArrays = data.comment.slice(0, 3);
-        }
-    }
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(components_Layout__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z, {
         children: data ? /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(components_Utils_sharedstyles__WEBPACK_IMPORTED_MODULE_2__/* .QuestionStyled */ .$, {
             className: "question my-5",
@@ -204,38 +196,6 @@ function QuestionPost({ data  }) {
                             })
                         ]
                     })
-                }),
-                /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(Comment, {
-                    style: commentStyles,
-                    className: "flex text-xs pl-10 flex-col comment items-center justify-center",
-                    children: [
-                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h4", {
-                            className: "text-left mt-10 text-lg font-semibold",
-                            children: "Comments"
-                        }),
-                        commentArrays.map((cmt, index)=>{
-                            return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-                                children: [
-                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                        className: "comment-item w-9/12 border-t divide-y-8",
-                                        dangerouslySetInnerHTML: {
-                                            __html: (0,html_entities__WEBPACK_IMPORTED_MODULE_3__.decode)(cmt)
-                                        }
-                                    }, index),
-                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
-                                        className: "divide-x-8 "
-                                    })
-                                ]
-                            });
-                        }),
-                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("button", {
-                            className: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded",
-                            onClick: ()=>{
-                                setIsShowMoreComment(!isShowMoreComment);
-                            },
-                            children: isShowMoreComment ? "Less more" : "See more"
-                        })
-                    ]
                 }),
                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Solution, {
                     children: data.answer.map((ans, index)=>{

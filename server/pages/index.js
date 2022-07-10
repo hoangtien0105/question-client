@@ -63,7 +63,7 @@ var external_react_topbar_progress_indicator_default = /*#__PURE__*/__webpack_re
 
 const converter = new (external_showdown_default()).Converter();
 const HomePageStyles = external_styled_components_default().div.withConfig({
-    componentId: "sc-730e21cb-0"
+    componentId: "sc-afe7946c-0"
 })`
 
  
@@ -120,7 +120,7 @@ function Home({ data , page  }) {
                                                 }),
                                                 /*#__PURE__*/ jsx_runtime_.jsx("div", {
                                                     className: "flex flex-wrap h-auto justify-end items-center space-x-8",
-                                                    children: tags.map((el, index)=>{
+                                                    children: tags.length && (tags === null || tags === void 0 ? void 0 : tags.map((el, index)=>{
                                                         return /*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
                                                             href: `/questions/tag/${el.slug}`,
                                                             children: /*#__PURE__*/ jsx_runtime_.jsx("a", {
@@ -128,7 +128,7 @@ function Home({ data , page  }) {
                                                                 children: el.name
                                                             })
                                                         }, index);
-                                                    })
+                                                    }))
                                                 })
                                             ]
                                         }),

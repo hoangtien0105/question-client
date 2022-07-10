@@ -11,8 +11,8 @@ exports.modules = {
 /* harmony export */   "k9": () => (/* binding */ getClientBaseURL)
 /* harmony export */ });
 /* unused harmony export getBaseURL */
-const API_URL = "http://api.solutionschecker.com/api/v1";
-const CLIENT_URL = "http://solutionschecker.com";
+const API_URL = "https://api.solutionschecker.com/api/v1";
+const CLIENT_URL = "https://solutionschecker.com";
 const getClientBaseURL = ()=>{
     return  true ? process.env.CLIENT_URL || CLIENT_URL : 0;
 };
