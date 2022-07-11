@@ -1,4 +1,4 @@
-import { siteDescription, siteName } from "constants/seo";
+import { siteDescription, siteName, siteUrl } from "constants/seo";
 
 const SEOConfig = {
     titleTemplate: `%s | ${siteName}`,
@@ -8,6 +8,12 @@ const SEOConfig = {
         type: 'website',
         url: 'https://solutionschecker.com',
         siteName: siteName,
+        images: [
+            {
+              url: `${siteUrl}/solutions-checker-banner.png`,
+              alt: `${siteDescription} - solutionschecker.com`,
+            },
+        ],
     },
     twitter: {
         handle: '@solutionschecker.com',
