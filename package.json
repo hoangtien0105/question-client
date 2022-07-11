@@ -9,7 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "startup": "pm2 start npm --name \"question-client\" -- start",
-    "push": "git push https://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@github.com/hoangtien0105/question-client.git"
+    "push": "git push https://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@github.com/hoangtien0105/question-client.git"
   },
   "dependencies": {
     "@use-gesture/react": "^10.2.16",
