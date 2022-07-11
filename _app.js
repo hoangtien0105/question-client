@@ -11,11 +11,13 @@ exports.modules = {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "JG": () => (/* binding */ siteDescription),
 /* harmony export */   "aD": () => (/* binding */ siteName),
+/* harmony export */   "j1": () => (/* binding */ logoPath),
 /* harmony export */   "or": () => (/* binding */ siteUrl)
 /* harmony export */ });
 const siteName = "Solutions Checker";
 const siteDescription = "Find solution for coding, HTML, CSS, JAVASCRIPT, MYSQL, PHP, PYTHON,... quickly.";
 const siteUrl = "https://solutionschecker.com";
+const logoPath = "/logo-second.png";
 
 
 /***/ }),
@@ -51,7 +53,13 @@ const SEOConfig = {
     openGraph: {
         type: "website",
         url: "https://solutionschecker.com",
-        siteName: seo/* siteName */.aD
+        siteName: seo/* siteName */.aD,
+        images: [
+            {
+                url: `${seo/* siteUrl */.or}/solutions-checker-banner.png`,
+                alt: `${seo/* siteDescription */.JG} - solutionschecker.com`
+            }, 
+        ]
     },
     twitter: {
         handle: "@solutionschecker.com",
