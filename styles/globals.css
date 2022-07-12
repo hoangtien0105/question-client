@@ -1,3 +1,4 @@
+@import 'antd/dist/antd.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -124,4 +125,87 @@ blockquote p {
 
 .question-content svg, .comment svg, .answer svg{
   display: none;
+}
+
+.ant-modal-body{
+  padding: 0;
+}
+
+.pagination-solution{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+code{
+  padding: 5px;
+  color: hsl(210deg 8% 15%);
+  background-color: hsl(210deg 8% 90%);
+  border-radius: 3px;
+}
+
+.solution-section{
+  position: relative;
+    
+}
+
+.pagination-solution-item{
+  padding: 10px;
+}
+
+
+.lds-facebook {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-facebook div {
+  display: inline-block;
+  position: absolute;
+  left: 8px;
+  width: 16px;
+  background: #fff;
+  animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+.lds-facebook div:nth-child(1) {
+  left: 8px;
+  animation-delay: -0.24s;
+}
+.lds-facebook div:nth-child(2) {
+  left: 32px;
+  animation-delay: -0.12s;
+}
+.lds-facebook div:nth-child(3) {
+  left: 56px;
+  animation-delay: 0;
+}
+@keyframes lds-facebook {
+  0% {
+    top: 8px;
+    height: 64px;
+  }
+  50%, 100% {
+    top: 24px;
+    height: 32px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .question-header, .solution-section, .pagination-solution{
+    width: 90%;
+  }
+}
+.question-header, .solution-section, .pagination-solution{
+  margin: auto;
+}
+.solution-inner{
+  width: 100%;
+}
+.pagination-solution{
+  margin-top: 50px;
+}
+@media screen and (min-width: 501px) {
+  .question-header, .solution-section, .pagination-solution{
+    width: 75%;
+  }
 }
