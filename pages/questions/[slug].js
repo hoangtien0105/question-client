@@ -86,7 +86,7 @@ export const getStaticProps = async (ctx) => {
       revalidate: 6000, // In seconds
     }
   } catch (err) {
-    throw new Error(err);
+    console.log(err);
   }
 
 
