@@ -142,14 +142,12 @@ const getStaticProps = async (ctx)=>{
                 page: 1,
                 answers,
                 randomTags
-            },
-            revalidate: 6000
+            }
         };
     } catch (err) {
         console.log(err);
         return {
-            props: {},
-            revalidate: 6000
+            props: {}
         };
     }
 };
