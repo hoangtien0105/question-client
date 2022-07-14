@@ -66,13 +66,15 @@ export const getStaticProps = async (ctx) => {
         answers,
         randomTags
       },
+      revalidate: 6000
 
     }
   } catch (err) {
     return {
       props: {
 
-      }
+      },
+      revalidate: 6000
     }
     console.log(err);
   }

@@ -52,14 +52,16 @@ export const getStaticProps = async (ctx) => {
        page: page,
        randomQuestions
       },
-      
+      revalidate: 6000
     }
     }catch(err){
       console.log(err);
       return {
         props: {
 
-        }
+        },
+        revalidate: 6000
+
       }
     }
 }
