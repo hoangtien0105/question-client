@@ -6,7 +6,7 @@ export default function QuestionWidgetPost({data}) {
     <div className='widget'>
        {
         data && data.map((el, index) => {
-          return <Link prefetch={false} key={index} href={`/questions/${el.slug}`}>
+          return <Link key={index} href={`/questions/${el.slug}`}>
               <a>
                 
                       {el.title}

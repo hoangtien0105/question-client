@@ -6,7 +6,7 @@ export default function TagWidgetPost({data}) {
     <div className='widget'>
        {
         data && data.map((el, index) => {
-            return <Link prefetch={false} key={index} href={`/questions/tag/${el.slug}`}>
+            return <Link key={index} href={`/questions/tag/${el.slug}`}>
                 <a>
                   
                         {el.name}
