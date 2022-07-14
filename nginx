@@ -1,0 +1,77 @@
+server {
+    # redirect HTTP to HTTPS for requests where the HTTP 'Host' header equal to one of our domains
+    server_name solutionschecker.com api.solutionschecker.com;
+    return 301 https://$http_host$request_uri;
+
+    listen [::]:443 ssl ipv6only=on; # managed by Certbot
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/solutionschecker.com/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/solutionschecker.com/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+
+
+
+}
+server {
+    # close the connection immediately for the rest of requests
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    return 444;
+}
+server {
+#    if ($host = solutionschecker.com) {
+ #       return 301 https://$host$request_uri;
+  #  } # managed by Certbot
+
+
+    # frontend
+    server_name solutionschecker.com;
+    root /var/www/index.nginx-debian.html;
+
+    location = /sitemap.xml {
+        root /var/www/html/public;
+    }
+    location / {
+        try_files $uri /index.html;
+    }
+
+
+}
+
+
+  server {
+    if ($host = api.solutionschecker.com) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    # backend
+    server_name api.solutionschecker.com;
+
+
+    location / {
+        proxy_pass http://137.184.3.29:2727/;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+
+
+}
+server {
+    if ($host = solutionschecker.com) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    listen 80;
+    listen [::]:80;
+    server_name solutionschecker.com api.solutionschecker.com;
+    return 404; # managed by Certbot
+
+
+}
