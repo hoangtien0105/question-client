@@ -7,11 +7,8 @@
   "/questions/[slug]": "pages/questions/[slug].js",
   "/questions": "pages/questions.js",
   "/questions/page/[page]": "pages/questions/page/[page].js",
-  "/questions/page/sitemap.xml": "pages/questions/page/sitemap.xml.js",
   "/questions/tag/[slug]": "pages/questions/tag/[slug].js",
   "/questions/tag/[slug]/page/[page]": "pages/questions/tag/[slug]/page/[page].js",
-  "/questions/tag/sitemap.xml": "pages/questions/tag/sitemap.xml.js",
-  "/sitemap.xml": "pages/sitemap.xml.js",
   "/en/404": "pages/en/404.html",
   "/en/500": "pages/en/500.html"
 }
