@@ -9,7 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "startup": "pm2 start npm --name \"question-client\" -- start",
-    "postbuild": "next-sitemap"
+    "sitemap": "next-sitemap"
   
   },
   "dependencies": {
