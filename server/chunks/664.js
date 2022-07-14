@@ -40,7 +40,9 @@ Object.defineProperty(exports, "__esModule", ({
 exports.addLocale = void 0;
 var _normalizeTrailingSlash = __webpack_require__(2392);
 const addLocale = (path, ...args)=>{
-    if (false) {}
+    if (true) {
+        return (0, _normalizeTrailingSlash).normalizePathTrailingSlash((__webpack_require__(3431).addLocale)(path, ...args));
+    }
     return path;
 };
 exports.addLocale = addLocale;
@@ -56,7 +58,7 @@ if ((typeof exports.default === "function" || typeof exports.default === "object
 /***/ }),
 
 /***/ 8748:
-/***/ ((module, exports) => {
+/***/ ((module, exports, __webpack_require__) => {
 
 "use strict";
 
@@ -65,7 +67,9 @@ Object.defineProperty(exports, "__esModule", ({
 }));
 exports.detectDomainLocale = void 0;
 const detectDomainLocale = (...args)=>{
-    if (false) {}
+    if (true) {
+        return (__webpack_require__(3539).detectDomainLocale)(...args);
+    }
 };
 exports.detectDomainLocale = detectDomainLocale;
 if ((typeof exports.default === "function" || typeof exports.default === "object" && exports.default !== null) && typeof exports.default.__esModule === "undefined") {
@@ -80,7 +84,7 @@ if ((typeof exports.default === "function" || typeof exports.default === "object
 /***/ }),
 
 /***/ 1210:
-/***/ ((module, exports) => {
+/***/ ((module, exports, __webpack_require__) => {
 
 "use strict";
 
@@ -88,11 +92,20 @@ Object.defineProperty(exports, "__esModule", ({
     value: true
 }));
 exports.getDomainLocale = getDomainLocale;
-const basePath = (/* unused pure expression or super */ null && ( false || ""));
+const basePath =  false || "";
 function getDomainLocale(path, locale, locales, domainLocales) {
-    if (false) {} else {
+    if (true) {
+        const normalizeLocalePath = (__webpack_require__(8875).normalizeLocalePath);
+        const detectDomainLocale = (__webpack_require__(8748).detectDomainLocale);
+        const target = locale || normalizeLocalePath(path, locales).detectedLocale;
+        const domain = detectDomainLocale(domainLocales, undefined, target);
+        if (domain) {
+            const proto = `http${domain.http ? "" : "s"}://`;
+            const finalLocale = target === domain.defaultLocale ? "" : `/${target}`;
+            return `${proto}${domain.domain}${basePath}${finalLocale}${path}`;
+        }
         return false;
-    }
+    } else {}
 }
 if ((typeof exports.default === "function" || typeof exports.default === "object" && exports.default !== null) && typeof exports.default.__esModule === "undefined") {
     Object.defineProperty(exports.default, "__esModule", {
@@ -352,6 +365,36 @@ if ((typeof exports.default === "function" || typeof exports.default === "object
 
 /***/ }),
 
+/***/ 8875:
+/***/ ((module, exports, __webpack_require__) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({
+    value: true
+}));
+exports.normalizeLocalePath = void 0;
+const normalizeLocalePath = (pathname, locales)=>{
+    if (true) {
+        return (__webpack_require__(4014).normalizeLocalePath)(pathname, locales);
+    }
+    return {
+        pathname,
+        detectedLocale: undefined
+    };
+};
+exports.normalizeLocalePath = normalizeLocalePath;
+if ((typeof exports.default === "function" || typeof exports.default === "object" && exports.default !== null) && typeof exports.default.__esModule === "undefined") {
+    Object.defineProperty(exports.default, "__esModule", {
+        value: true
+    });
+    Object.assign(exports.default, exports);
+    module.exports = exports.default;
+} //# sourceMappingURL=normalize-locale-path.js.map
+
+
+/***/ }),
+
 /***/ 2392:
 /***/ ((module, exports, __webpack_require__) => {
 
@@ -422,7 +465,12 @@ Object.defineProperty(exports, "__esModule", ({
 exports.removeLocale = removeLocale;
 var _parsePath = __webpack_require__(8854);
 function removeLocale(path, locale) {
-    if (false) {}
+    if (true) {
+        const { pathname  } = (0, _parsePath).parsePath(path);
+        const pathLower = pathname.toLowerCase();
+        const localeLower = locale == null ? void 0 : locale.toLowerCase();
+        return locale && (pathLower.startsWith(`/${localeLower}/`) || pathLower === `/${localeLower}`) ? `${pathname.length === locale.length + 1 ? `/` : ``}${path.slice(locale.length + 1)}` : path;
+    }
     return path;
 }
 if ((typeof exports.default === "function" || typeof exports.default === "object" && exports.default !== null) && typeof exports.default.__esModule === "undefined") {
@@ -953,14 +1001,19 @@ class Router {
         this.isSsr = true;
         this.isLocaleDomain = false;
         this.isReady = !!(self.__NEXT_DATA__.gssp || self.__NEXT_DATA__.gip || self.__NEXT_DATA__.appGip && !self.__NEXT_DATA__.gsp || !autoExportDynamic && !self.location.search && !false);
-        if (false) {}
+        if (true) {
+            this.locales = locales;
+            this.defaultLocale = defaultLocale;
+            this.domainLocales = domainLocales;
+            this.isLocaleDomain = !!(0, _detectDomainLocale).detectDomainLocale(domainLocales, self.location.hostname);
+        }
         this.state = {
             route,
             pathname,
             query,
             asPath: autoExportDynamic ? pathname : as,
             isPreview: !!isPreview,
-            locale:  false ? 0 : undefined,
+            locale:  true ? locale : 0,
             isFallback
         };
         this._initialMatchesMiddlewarePromise = Promise.resolve(false);
@@ -1073,7 +1126,57 @@ class Router {
             return false;
         }
         const prevLocale = nextState.locale;
-        if (false) { var ref; }
+        if (true) {
+            nextState.locale = options.locale === false ? this.defaultLocale : options.locale || nextState.locale;
+            if (typeof options.locale === "undefined") {
+                options.locale = nextState.locale;
+            }
+            const parsedAs = (0, _parseRelativeUrl).parseRelativeUrl((0, _hasBasePath).hasBasePath(as) ? (0, _removeBasePath).removeBasePath(as) : as);
+            const localePathResult = (0, _normalizeLocalePath).normalizeLocalePath(parsedAs.pathname, this.locales);
+            if (localePathResult.detectedLocale) {
+                nextState.locale = localePathResult.detectedLocale;
+                parsedAs.pathname = (0, _addBasePath).addBasePath(parsedAs.pathname);
+                as = (0, _formatUrl).formatWithValidation(parsedAs);
+                url = (0, _addBasePath).addBasePath((0, _normalizeLocalePath).normalizeLocalePath((0, _hasBasePath).hasBasePath(url) ? (0, _removeBasePath).removeBasePath(url) : url, this.locales).pathname);
+            }
+            let didNavigate = false;
+            // we need to wrap this in the env check again since regenerator runtime
+            // moves this on its own due to the return
+            if (true) {
+                var ref;
+                // if the locale isn't configured hard navigate to show 404 page
+                if (!((ref = this.locales) == null ? void 0 : ref.includes(nextState.locale))) {
+                    parsedAs.pathname = (0, _addLocale).addLocale(parsedAs.pathname, nextState.locale);
+                    handleHardNavigation({
+                        url: (0, _formatUrl).formatWithValidation(parsedAs),
+                        router: this
+                    });
+                    // this was previously a return but was removed in favor
+                    // of better dead code elimination with regenerator runtime
+                    didNavigate = true;
+                }
+            }
+            const detectedDomain = (0, _detectDomainLocale).detectDomainLocale(this.domainLocales, undefined, nextState.locale);
+            // we need to wrap this in the env check again since regenerator runtime
+            // moves this on its own due to the return
+            if (true) {
+                // if we are navigating to a domain locale ensure we redirect to the
+                // correct domain
+                if (!didNavigate && detectedDomain && this.isLocaleDomain && self.location.hostname !== detectedDomain.domain) {
+                    const asNoBasePath = (0, _removeBasePath).removeBasePath(as);
+                    handleHardNavigation({
+                        url: `http${detectedDomain.http ? "" : "s"}://${detectedDomain.domain}${(0, _addBasePath).addBasePath(`${nextState.locale === detectedDomain.defaultLocale ? "" : `/${nextState.locale}`}${asNoBasePath === "/" ? "" : asNoBasePath}` || "/")}`,
+                        router: this
+                    });
+                    // this was previously a return but was removed in favor
+                    // of better dead code elimination with regenerator runtime
+                    didNavigate = true;
+                }
+            }
+            if (didNavigate) {
+                return new Promise(()=>{});
+            }
+        }
         // marking route changes as a navigation start entry
         if (_utils.ST) {
             performance.mark("routeChange");
@@ -1240,7 +1343,11 @@ class Router {
                     if ((0, _hasBasePath).hasBasePath(rewriteAs)) {
                         rewriteAs = (0, _removeBasePath).removeBasePath(rewriteAs);
                     }
-                    if (false) {}
+                    if (true) {
+                        const localeResult = (0, _normalizeLocalePath).normalizeLocalePath(rewriteAs, this.locales);
+                        nextState.locale = localeResult.detectedLocale || nextState.locale;
+                        rewriteAs = localeResult.pathname;
+                    }
                     const routeRegex1 = (0, _routeRegex).getRouteRegex(pathname);
                     const curRouteMatch = (0, _routeMatcher).getRouteMatcher(routeRegex1)(rewriteAs);
                     if (curRouteMatch) {
@@ -1349,7 +1456,11 @@ class Router {
                 }
                 throw error;
             }
-            if (false) {}
+            if (true) {
+                if (nextState.locale) {
+                    document.documentElement.lang = nextState.locale;
+                }
+            }
             if (!isQueryUpdating) {
                 Router.events.emit("routeChangeComplete", as, routeProps);
             }
@@ -1666,7 +1777,18 @@ class Router {
    */ async prefetch(url, asPath = url, options = {}) {
         let parsed = (0, _parseRelativeUrl).parseRelativeUrl(url);
         let { pathname , query  } = parsed;
-        if (false) {}
+        if (true) {
+            if (options.locale === false) {
+                pathname = (0, _normalizeLocalePath).normalizeLocalePath(pathname, this.locales).pathname;
+                parsed.pathname = pathname;
+                url = (0, _formatUrl).formatWithValidation(parsed);
+                let parsedAs = (0, _parseRelativeUrl).parseRelativeUrl(asPath);
+                const localePathResult = (0, _normalizeLocalePath).normalizeLocalePath(parsedAs.pathname, this.locales);
+                parsedAs.pathname = localePathResult.pathname;
+                options.locale = localePathResult.detectedLocale || this.defaultLocale;
+                asPath = (0, _formatUrl).formatWithValidation(parsedAs);
+            }
+        }
         const pages = await this.pageLoader.getPageList();
         let resolvedAs = asPath;
         const locale = typeof options.locale !== "undefined" ? options.locale || undefined : this.locale;

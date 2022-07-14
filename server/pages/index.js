@@ -25,7 +25,6 @@ function QuestionWidgetPost({ data  }) {
         className: "widget",
         children: data && data.map((el, index)=>{
             return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
-                prefetch: false,
                 href: `/questions/${el.slug}`,
                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
                     children: el.title
@@ -67,6 +66,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(2724);
 /* harmony import */ var next_seo__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(6641);
 /* harmony import */ var next_seo__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(next_seo__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var constants_seo__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(1040);
 /* harmony import */ var components_Common_PostLayout__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(3437);
 /* harmony import */ var components_Common_QuestionWidgetPost__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(7089);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([components_Common_PostLayout__WEBPACK_IMPORTED_MODULE_11__]);
@@ -90,6 +90,11 @@ function Home({ data , page , answers , randomQuestions  }) {
     const router = (0,next_router__WEBPACK_IMPORTED_MODULE_8__.useRouter)();
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_components_Layout__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .Z, {
         children: [
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_head__WEBPACK_IMPORTED_MODULE_1___default()), {
+                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("title", {
+                    children: constants_seo__WEBPACK_IMPORTED_MODULE_13__/* .siteName */ .aD
+                })
+            }),
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(next_seo__WEBPACK_IMPORTED_MODULE_10__.NextSeo, {
                 twitter: {
                     cardType: "summary_large_image",
@@ -212,6 +217,13 @@ module.exports = require("next/dist/shared/lib/head-manager-context.js");
 
 /***/ }),
 
+/***/ 3539:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/i18n/detect-domain-locale.js");
+
+/***/ }),
+
 /***/ 4014:
 /***/ ((module) => {
 
@@ -244,6 +256,13 @@ module.exports = require("next/dist/shared/lib/page-path/denormalize-page-path.j
 /***/ ((module) => {
 
 module.exports = require("next/dist/shared/lib/router-context.js");
+
+/***/ }),
+
+/***/ 3431:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/router/utils/add-locale.js");
 
 /***/ }),
 

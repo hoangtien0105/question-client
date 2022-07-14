@@ -25,7 +25,6 @@ function TagWidgetPost({ data  }) {
         className: "widget",
         children: data && data.map((el, index)=>{
             return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_1___default()), {
-                prefetch: false,
                 href: `/questions/tag/${el.slug}`,
                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
                     children: el.name
@@ -216,6 +215,13 @@ module.exports = require("next/dist/shared/lib/head-manager-context.js");
 
 /***/ }),
 
+/***/ 3539:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/i18n/detect-domain-locale.js");
+
+/***/ }),
+
 /***/ 4014:
 /***/ ((module) => {
 
@@ -248,6 +254,13 @@ module.exports = require("next/dist/shared/lib/page-path/denormalize-page-path.j
 /***/ ((module) => {
 
 module.exports = require("next/dist/shared/lib/router-context.js");
+
+/***/ }),
+
+/***/ 3431:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/router/utils/add-locale.js");
 
 /***/ }),
 
