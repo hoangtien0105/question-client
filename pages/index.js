@@ -24,6 +24,10 @@ export default function Home({data, page, answers, randomQuestions}) {
   const router = useRouter();
   return (
     <Layout>
+      <Head>
+        <title>{siteName}</title>
+        
+      </Head>
       <NextSeo
         twitter={{
           cardType: 'summary_large_image',

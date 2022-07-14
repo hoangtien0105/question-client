@@ -1,5 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+
+  i18n: {
+    locales: ["en"],
+    defaultLocale: "en",
+  },
+
   env: {
     BASEURL : 'http://localhost:2727/api/v1'
   },
