@@ -80,10 +80,7 @@ export const getStaticProps = async (ctx) => {
         data: post,
         randomQuestions
       },
-      // Next.js will attempt to re-generate the page:
-      // - When a request comes in
-      // - At most once every 10 seconds
-      , // In seconds
+      
     }
   } catch (err) {
     console.log(err);
