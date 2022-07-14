@@ -4,7 +4,6 @@ const config = {
     siteUrl: BASE_URL,
     generateRobotsTxt: true, // (optional)
     // ...other options
-    sitemapSize: 7000,
 
 }
   
