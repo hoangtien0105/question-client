@@ -7,6 +7,7 @@ import { decode } from 'html-entities';
 import requester from 'lib/api/requester';
 import { useQuestions, useQuestionsByTag } from 'lib/hook';
 import { BreadcrumbJsonLd, NextSeo } from 'next-seo';
+import { siteUrl } from 'next-sitemap.config';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react'

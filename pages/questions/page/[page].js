@@ -3,6 +3,7 @@ import QuestionWidgetPost from 'components/Common/QuestionWidgetPost';
 import Layout from 'components/Layout';
 import requester from 'lib/api/requester';
 import { BreadcrumbJsonLd, NextSeo } from 'next-seo';
+import { siteUrl } from 'next-sitemap.config';
 import Link from 'next/link';
 import React from 'react'
 
