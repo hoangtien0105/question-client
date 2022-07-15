@@ -15,11 +15,13 @@ exports.modules = {
 /* harmony export */   "j1": () => (/* binding */ logoPath),
 /* harmony export */   "or": () => (/* binding */ siteUrl)
 /* harmony export */ });
+/* unused harmony export siteHostName */
 const siteName = "Solution Checker";
 const siteDescription = "Find the solution to any question. We focus on finding the fastest possible solution for users. Main topics like coding, learning.";
 const siteUrl = "https://solutionschecker.com";
 const logoPath = "/logo-second.png";
 const siteKeyword = "solutions checker, solution checker, how to, solution for, check for solution, resolve question, what is, what solution for, find solution";
+const siteHostName = "solutionschecker.com";
 
 
 /***/ }),
@@ -87,12 +89,8 @@ function MyApp({ Component , pageProps  }) {
     const router = (0,router_.useRouter)();
     (0,external_react_.useEffect)(()=>{
         if (document && window) {
-            const externalLinks = [];
             document.querySelectorAll("a").forEach((el)=>{
-                const targetUrl = new URL(el.href);
-                const mySiteUrl = new URL(window.location);
-                console.log(targetUrl, mySiteUrl);
-                if (targetUrl.hostname !== mySiteUrl.hostname) {
+                if (el.href.indexOf(seo/* siteUrl */.or) < 0) {
                     el.rel = "nofollow noreferrer";
                     el.target = "__blank";
                 }
@@ -101,12 +99,8 @@ function MyApp({ Component , pageProps  }) {
     }, []);
     (0,external_react_.useEffect)(()=>{
         if (document && window) {
-            const externalLinks = [];
             document.querySelectorAll("a").forEach((el)=>{
-                const targetUrl = new URL(el.href);
-                const mySiteUrl = new URL(window.location);
-                console.log(targetUrl, mySiteUrl);
-                if (targetUrl.hostname !== mySiteUrl.hostname) {
+                if (el.href.indexOf(seo/* siteUrl */.or) < 0) {
                     el.rel = "nofollow noreferrer";
                     el.target = "__blank";
                 }

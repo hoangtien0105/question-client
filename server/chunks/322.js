@@ -383,11 +383,13 @@ function Layout({ children  }) {
 /* harmony export */   "j1": () => (/* binding */ logoPath),
 /* harmony export */   "or": () => (/* binding */ siteUrl)
 /* harmony export */ });
+/* unused harmony export siteHostName */
 const siteName = "Solution Checker";
 const siteDescription = "Find the solution to any question. We focus on finding the fastest possible solution for users. Main topics like coding, learning.";
 const siteUrl = "https://solutionschecker.com";
 const logoPath = "/logo-second.png";
 const siteKeyword = "solutions checker, solution checker, how to, solution for, check for solution, resolve question, what is, what solution for, find solution";
+const siteHostName = "solutionschecker.com";
 
 
 /***/ }),

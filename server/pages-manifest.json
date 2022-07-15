@@ -5,9 +5,9 @@
   "/_document": "pages/_document.js",
   "/": "pages/index.js",
   "/questions/[slug]": "pages/questions/[slug].js",
-  "/questions": "pages/questions.js",
-  "/questions/page/[page]": "pages/questions/page/[page].js",
   "/questions/tag/[slug]": "pages/questions/tag/[slug].js",
+  "/questions/page/[page]": "pages/questions/page/[page].js",
+  "/questions": "pages/questions.js",
   "/questions/tag/[slug]/page/[page]": "pages/questions/tag/[slug]/page/[page].js",
   "/en/404": "pages/en/404.html",
   "/en/500": "pages/en/500.html"
