@@ -6,7 +6,7 @@ import Layout from 'components/Layout';
 import { decode } from 'html-entities';
 import requester from 'lib/api/requester';
 import { useQuestions, useQuestionsByTag } from 'lib/hook';
-import { NextSeo } from 'next-seo';
+import { BreadcrumbJsonLd, NextSeo } from 'next-seo';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react'
@@ -19,6 +19,31 @@ export default function QuestionTags({ data, slug, page, answers, randomTags }) 
 
   return (
     <Layout>
+      <BreadcrumbJsonLd
+          itemListElements={[
+            {
+              name: "Home",
+              item: siteUrl,
+              position: 1
+            },
+            {
+              name: "Questions",
+              position: 2,
+              item: `${siteUrl}/questions`
+            },
+            {
+              name: "Tag",
+              position: 3,
+              item: `${siteUrl}/questions/tag/${slug}`
+            }
+            ,
+            {
+              name: "Page",
+              position: 4,
+              item: `${siteUrl}/questions/tag/${slug}/page/${page}`
+            }
+          ]}
+        />
       <NextSeo
         title={`${slug} tags`}
         description={`All questions and solutions for ${slug} tags - page ${page}`}

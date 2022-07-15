@@ -2,13 +2,32 @@ import PostLayout from 'components/Common/PostLayout';
 import QuestionWidgetPost from 'components/Common/QuestionWidgetPost';
 import Layout from 'components/Layout';
 import requester from 'lib/api/requester';
-import { NextSeo } from 'next-seo';
+import { BreadcrumbJsonLd, NextSeo } from 'next-seo';
 import Link from 'next/link';
 import React from 'react'
 
 export default function QuestionOnPage({data, page, answers, randomQuestions}) {
     return (
         <Layout> 
+          <BreadcrumbJsonLd
+          itemListElements={[
+            {
+              name: "Home",
+              item: siteUrl,
+              position: 1
+            },
+            {
+              name: "Questions",
+              position: 2,
+              item: `${siteUrl}/questions`
+            },
+            {
+              name: "Page",
+              position: 3,
+              item: `${siteUrl}/questions/page/${page}`
+            }
+          ]}
+        />
           <NextSeo
           title={undefined}
           description={`Questions - page ${page}`}

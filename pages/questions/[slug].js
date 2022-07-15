@@ -1,14 +1,14 @@
 import Layout from 'components/Layout';
 import { decode } from 'html-entities';
 import requester from 'lib/api/requester';
-import { useBreakpoint, useQuestions, useQuestionsByTag } from 'lib/hook';
-import { NextSeo, QAPageJsonLd } from 'next-seo';
+import { NextSeo, QAPageJsonLd, BreadcrumbJsonLd } from 'next-seo';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react'
 import * as cheerio from 'cheerio';
 import SolutionSection from 'components/Common/SolutionSection';
 import QuestionWidgetPost from 'components/Common/QuestionWidgetPost';
+import { siteUrl } from 'next-sitemap.config';
 
 export default function QuestionPost({ data, randomQuestions }) {
   const router = useRouter();
@@ -16,6 +16,25 @@ export default function QuestionPost({ data, randomQuestions }) {
     <Layout>
 
       {data && (<div className="question my-5">
+        <BreadcrumbJsonLd
+          itemListElements={[
+            {
+              name: "Home",
+              item: siteUrl,
+              position: 1
+            },
+            {
+              name: "Questions",
+              position: 2,
+              item: `${siteUrl}/questions`
+            },
+            {
+              name: "Questions",
+              position: 3,
+              item: `${siteUrl}/questions/${data.slug}`
+            }
+          ]}
+        />
         <NextSeo
           title={data.title}
           description={cheerio.load(decode(data.content)).text()}

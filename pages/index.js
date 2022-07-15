@@ -15,11 +15,6 @@ import { siteDescription, siteName } from 'constants/seo';
 import PostLayout from 'components/Common/PostLayout';
 import QuestionWidgetPost from 'components/Common/QuestionWidgetPost';
 
-
-
-
-
-
 export default function Home({data, page, answers, randomQuestions}) {
   const router = useRouter();
   return (

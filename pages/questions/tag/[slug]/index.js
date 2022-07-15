@@ -5,7 +5,6 @@ import Layout from 'components/Layout';
 
 import { decode } from 'html-entities';
 import requester from 'lib/api/requester';
-import { useQuestions, useQuestionsByTag } from 'lib/hook';
 import { NextSeo } from 'next-seo';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -20,7 +19,6 @@ export default function QuestionTags({ data, slug, page, answers, randomTags }) 
         title={`${slug} tags`}
         description={`All questions and solutions for ${slug} tags`}
       />
-
       <div className='pagination-page-wrapper'>
         {data && (page <= 1) ? <span className={`pagination-buttons previous bg-stone-500 cursor-not-allowed  hover:bg-stone-500 text-white font-bold py-2 px-4 rounded`}>Previous</span> : <Link href={`/questions/tag/${slug}/page/${page - 1}`} ><a className={`pagination-buttons previous bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded`}>Previous</a></Link>}
       </div>
