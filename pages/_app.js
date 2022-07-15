@@ -12,12 +12,8 @@ function MyApp({ Component, pageProps }) {
   const router = useRouter();
   useEffect(() => {
     if(document && window){
-      const externalLinks = [];
       document.querySelectorAll("a").forEach((el) => {
-        const targetUrl = new URL(el.href);
-        const mySiteUrl = new URL(window.location);
-        console.log(targetUrl, mySiteUrl)
-        if(targetUrl.hostname !== mySiteUrl.hostname){
+        if(el.href.indexOf(siteUrl) < 0){
           el.rel = 'nofollow noreferrer';
           el.target = '__blank';
         }
@@ -27,12 +23,8 @@ function MyApp({ Component, pageProps }) {
   }, [])
   useEffect(() => {
     if(document && window){
-      const externalLinks = [];
       document.querySelectorAll("a").forEach((el) => {
-        const targetUrl = new URL(el.href);
-        const mySiteUrl = new URL(window.location);
-        console.log(targetUrl, mySiteUrl)
-        if(targetUrl.hostname !== mySiteUrl.hostname){
+        if(el.href.indexOf(siteUrl) < 0){
           el.rel = 'nofollow noreferrer';
           el.target = '__blank';
         }
