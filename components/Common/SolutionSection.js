@@ -16,7 +16,7 @@ export default function SolutionSection({answers, keywords}) {
       <div className="rounded-xl solution-inner border md:px-10 md:py-10 px-2 py-10 shadow-md bg-white">
         
       <div style={{display: 'flex', justifyContent: 'space-between'}}>
-      <h4 className='text-4xl font-semibold mb-5'>{`Solution ${index + 1}`}</h4>
+      <h1 className='text-4xl font-semibold mb-5'>{`Solution ${index + 1}`}</h1>
       <TagsSection data={keywords}/>
       </div>
         

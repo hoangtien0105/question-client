@@ -21,9 +21,8 @@ export default function PostLayout({ slug, title, tags, answers }) {
     return (
         <>
         <div className="question my-5">
-
             <div className='flex items-center justify-center'>
-
+             
                 <div className="rounded-xl border p-5 shadow-md post-layout-inner bg-white">
                     <div className="flex w-full items-center justify-between border-b pb-3">
                         <div className="flex items-center space-x-3">
@@ -55,7 +54,7 @@ export default function PostLayout({ slug, title, tags, answers }) {
                     <div>
                         <div className="flex items-center justify-between text-slate-500">
                             <div className="flex space-x-4 md:space-x-8">
-                            <span onClick={() => {setIsShowSolution(true)}} className={`btn bg-stone-500 cursor-pointer  hover:bg-stone-500 text-white font-bold py-2 px-4 rounded`}>Show Solution</span>
+                            <span onClick={() => {setIsShowSolution(true)}} className={`btn bg-stone-500 cursor-pointer mt-5  hover:bg-stone-500 text-white font-bold py-2 px-4 rounded`}>Show Solution</span>
                                 
                             </div>
                         </div>
@@ -64,7 +63,7 @@ export default function PostLayout({ slug, title, tags, answers }) {
             </div>
 
         </div>
-        {isShowSolution && <SolutionPopup  tags={tags} onClose={() => {setIsShowSolution(false)}} answers={answers}/>}
+        {isShowSolution && <SolutionPopup title={title} tags={tags} onClose={() => {setIsShowSolution(false)}} answers={answers}/>}
         </>
 
     )

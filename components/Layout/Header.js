@@ -11,7 +11,7 @@ export default function Header() {
             <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
                 <Link href='/'><a className="flex items-center">
                         <img src={logoPath} className="mr-3 h-6 sm:h-9" alt="Solution Checker Logo" />
-                        <h4 className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Solution Checker</h4>
+                        <h1 className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Solution Checker</h1>
                     </a>
                 </Link>
                 <div className="flex items-center lg:order-2">

@@ -13,6 +13,7 @@ export default function SolutionPagination({hrefs, marginTop = '10px', width}) {
   return (
     
 <nav className='flex pagination-solution flex-col justify-end'>
+  <h1 className='text-lg font-semibold mb-5'>Navigate to solutions: </h1>
   <ul className="inline-flex -space-x-px overflow-auto">
     {hrefs?.length && hrefs.map((href, index) => {
         return <li className="pagination-solution-item" key={index}>

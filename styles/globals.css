@@ -12,7 +12,7 @@ body {
 }
 
 a {
-  color: inherit;
+  color: #1890ff;
   text-decoration: none;
 }
 
@@ -168,14 +168,19 @@ code{
   width: 100%;
 }
 .pagination-solution{
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 
 .question .tags-wrap{
   overflow: auto;
 }
-
+.question a{
+  color: inherit;
+}
+.tags-wrap .tags a{
+  color: inherit;
+}
 .question .tags-wrap .tags{
   display: flex;
   justify-content: flex-end;
@@ -201,9 +206,16 @@ code{
   color: #295099;
 }
 
+.question-header *, .solution-section *, .pagination-solution *, .post-layout-inner *{
+  word-wrap: break-word;
+}
+
 @media screen and (max-width: 500px) {
   .question-header, .solution-section, .pagination-solution, .post-layout-inner{
     width: 90%;
+  }
+  p,span, div{
+    line-height: 1.5rem;
   }
   .widget a{
     width: unset;
@@ -221,4 +233,11 @@ code{
   .widget a{
     width: 33%;
   }
+  p, span, div{
+    line-height: 1.6rem;
+  }
+}
+
+.ant-modal p, .ant-modal span, .ant-modal div{
+  color: rgba(0, 0, 0, 1);
 }

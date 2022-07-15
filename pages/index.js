@@ -11,7 +11,7 @@ import { decode } from 'html-entities'
 import { useRouter } from 'next/router'
 import Layout from '../components/Layout'
 import { NextSeo } from 'next-seo';
-import { siteDescription, siteName } from 'constants/seo';
+import { siteDescription, siteKeyword, siteName } from 'constants/seo';
 import PostLayout from 'components/Common/PostLayout';
 import QuestionWidgetPost from 'components/Common/QuestionWidgetPost';
 
@@ -21,7 +21,7 @@ export default function Home({data, page, answers, randomQuestions}) {
     <Layout>
       <Head>
         <title>{siteName}</title>
-        
+        <link name="keywords" content={siteKeyword}></link>
       </Head>
       <NextSeo
         twitter={{

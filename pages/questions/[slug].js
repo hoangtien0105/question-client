@@ -9,12 +9,16 @@ import * as cheerio from 'cheerio';
 import SolutionSection from 'components/Common/SolutionSection';
 import QuestionWidgetPost from 'components/Common/QuestionWidgetPost';
 import { siteUrl } from 'next-sitemap.config';
+import Head from 'next/head';
+import { siteKeyword } from 'constants/seo';
 
 export default function QuestionPost({ data, randomQuestions }) {
   const router = useRouter();
   return (
     <Layout>
-
+      <Head>
+        <link name="keywords" content={`${data.tags.length ? data.tags.map(el => el.name).join(',')+',' : ''}${siteKeyword}`}></link>
+      </Head>
       {data && (<div className="question my-5">
         <BreadcrumbJsonLd
           itemListElements={[
