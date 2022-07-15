@@ -37,6 +37,20 @@ function QuestionWidgetPost({ data  }) {
 
 /***/ }),
 
+/***/ 3060:
+/***/ ((module) => {
+
+
+const BASE_URL = "https://solutionschecker.com";
+const config = {
+    siteUrl: BASE_URL,
+    generateRobotsTxt: true
+};
+module.exports = config;
+
+
+/***/ }),
+
 /***/ 2081:
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
@@ -53,20 +67,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var html_entities__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9816);
 /* harmony import */ var html_entities__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(html_entities__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var lib_api_requester__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1408);
-/* harmony import */ var lib_hook__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9040);
-/* harmony import */ var next_seo__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6641);
-/* harmony import */ var next_seo__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_seo__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(1664);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(1853);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(6689);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var cheerio__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(295);
-/* harmony import */ var components_Common_SolutionSection__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(3090);
-/* harmony import */ var components_Common_QuestionWidgetPost__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(7089);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([lib_hook__WEBPACK_IMPORTED_MODULE_4__, cheerio__WEBPACK_IMPORTED_MODULE_9__]);
-([lib_hook__WEBPACK_IMPORTED_MODULE_4__, cheerio__WEBPACK_IMPORTED_MODULE_9__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+/* harmony import */ var next_seo__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6641);
+/* harmony import */ var next_seo__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_seo__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(1664);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(1853);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(6689);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var cheerio__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(295);
+/* harmony import */ var components_Common_SolutionSection__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(3090);
+/* harmony import */ var components_Common_QuestionWidgetPost__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(7089);
+/* harmony import */ var next_sitemap_config__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(3060);
+/* harmony import */ var next_sitemap_config__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(next_sitemap_config__WEBPACK_IMPORTED_MODULE_11__);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([cheerio__WEBPACK_IMPORTED_MODULE_8__]);
+cheerio__WEBPACK_IMPORTED_MODULE_8__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 
 
 
@@ -81,24 +96,43 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([lib_
 
 function QuestionPost({ data , randomQuestions  }) {
     var ref;
-    const router = (0,next_router__WEBPACK_IMPORTED_MODULE_7__.useRouter)();
+    const router = (0,next_router__WEBPACK_IMPORTED_MODULE_6__.useRouter)();
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(components_Layout__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z, {
         children: [
             data && /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                 className: "question my-5",
                 children: [
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(next_seo__WEBPACK_IMPORTED_MODULE_5__.NextSeo, {
-                        title: data.title,
-                        description: cheerio__WEBPACK_IMPORTED_MODULE_9__.load((0,html_entities__WEBPACK_IMPORTED_MODULE_2__.decode)(data.content)).text()
+                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(next_seo__WEBPACK_IMPORTED_MODULE_4__.BreadcrumbJsonLd, {
+                        itemListElements: [
+                            {
+                                name: "Home",
+                                item: next_sitemap_config__WEBPACK_IMPORTED_MODULE_11__.siteUrl,
+                                position: 1
+                            },
+                            {
+                                name: "Questions",
+                                position: 2,
+                                item: `${next_sitemap_config__WEBPACK_IMPORTED_MODULE_11__.siteUrl}/questions`
+                            },
+                            {
+                                name: "Questions",
+                                position: 3,
+                                item: `${next_sitemap_config__WEBPACK_IMPORTED_MODULE_11__.siteUrl}/questions/${data.slug}`
+                            }
+                        ]
                     }),
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(next_seo__WEBPACK_IMPORTED_MODULE_5__.QAPageJsonLd, {
+                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(next_seo__WEBPACK_IMPORTED_MODULE_4__.NextSeo, {
+                        title: data.title,
+                        description: cheerio__WEBPACK_IMPORTED_MODULE_8__.load((0,html_entities__WEBPACK_IMPORTED_MODULE_2__.decode)(data.content)).text()
+                    }),
+                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(next_seo__WEBPACK_IMPORTED_MODULE_4__.QAPageJsonLd, {
                         mainEntity: {
                             name: data.title,
-                            text: cheerio__WEBPACK_IMPORTED_MODULE_9__.load((0,html_entities__WEBPACK_IMPORTED_MODULE_2__.decode)(data.content)).text(),
+                            text: cheerio__WEBPACK_IMPORTED_MODULE_8__.load((0,html_entities__WEBPACK_IMPORTED_MODULE_2__.decode)(data.content)).text(),
                             answerCount: ((ref = data.answer) === null || ref === void 0 ? void 0 : ref.length) || 4,
                             upVoteCount: 500,
                             suggestedAnswer: data.answer.length ? data.answer.map((el, index)=>({
-                                    text: cheerio__WEBPACK_IMPORTED_MODULE_9__.load((0,html_entities__WEBPACK_IMPORTED_MODULE_2__.decode)(el)).text(),
+                                    text: cheerio__WEBPACK_IMPORTED_MODULE_8__.load((0,html_entities__WEBPACK_IMPORTED_MODULE_2__.decode)(el)).text(),
                                     url: `${router.pathname}#solution${index + 1}`
                                 })) : []
                         }
@@ -115,7 +149,7 @@ function QuestionPost({ data , randomQuestions  }) {
                                             className: "flex items-center space-x-3",
                                             children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                                 className: "text-lg font-bold text-slate-700",
-                                                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_6___default()), {
+                                                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_5___default()), {
                                                     href: `/questions/${data.slug}`,
                                                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
                                                         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h1", {
@@ -128,7 +162,7 @@ function QuestionPost({ data , randomQuestions  }) {
                                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                             className: "flex flex-wrap h-auto justify-end items-center space-x-8",
                                             children: data.tags.map((el, index)=>{
-                                                return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_6___default()), {
+                                                return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_5___default()), {
                                                     href: `/questions/tag/${el.slug}`,
                                                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
                                                         className: "rounded-2xl border bg-neutral-100 px-3 py-1 text-sm font-semibold",
@@ -148,14 +182,14 @@ function QuestionPost({ data , randomQuestions  }) {
                             ]
                         })
                     }),
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(components_Common_SolutionSection__WEBPACK_IMPORTED_MODULE_10__/* ["default"] */ .Z, {
+                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(components_Common_SolutionSection__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .Z, {
                         keywords: data.tags,
                         marginTop: "30px",
                         answers: data.answer
                     })
                 ]
             }),
-            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(components_Common_QuestionWidgetPost__WEBPACK_IMPORTED_MODULE_11__/* ["default"] */ .Z, {
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(components_Common_QuestionWidgetPost__WEBPACK_IMPORTED_MODULE_10__/* ["default"] */ .Z, {
                 data: randomQuestions
             })
         ]
@@ -204,13 +238,6 @@ __webpack_async_result__();
 /***/ ((module) => {
 
 module.exports = require("html-entities");
-
-/***/ }),
-
-/***/ 6517:
-/***/ ((module) => {
-
-module.exports = require("lodash");
 
 /***/ }),
 
@@ -422,13 +449,6 @@ module.exports = require("react/jsx-runtime");
 
 module.exports = import("cheerio");;
 
-/***/ }),
-
-/***/ 5941:
-/***/ ((module) => {
-
-module.exports = import("swr");;
-
 /***/ })
 
 };
@@ -438,7 +458,7 @@ module.exports = import("swr");;
 var __webpack_require__ = require("../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [952,664,108], () => (__webpack_exec__(2081)));
+var __webpack_exports__ = __webpack_require__.X(0, [952,664,322], () => (__webpack_exec__(2081)));
 module.exports = __webpack_exports__;
 
 })();
