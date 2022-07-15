@@ -80,8 +80,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var components_Common_QuestionWidgetPost__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(7089);
 /* harmony import */ var next_sitemap_config__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(3060);
 /* harmony import */ var next_sitemap_config__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(next_sitemap_config__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(968);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var constants_seo__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(1040);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([cheerio__WEBPACK_IMPORTED_MODULE_8__]);
 cheerio__WEBPACK_IMPORTED_MODULE_8__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
+
+
 
 
 
@@ -99,6 +104,12 @@ function QuestionPost({ data , randomQuestions  }) {
     const router = (0,next_router__WEBPACK_IMPORTED_MODULE_6__.useRouter)();
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(components_Layout__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z, {
         children: [
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_head__WEBPACK_IMPORTED_MODULE_12___default()), {
+                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("link", {
+                    name: "keywords",
+                    content: `${data.tags.length ? data.tags.map((el)=>el.name).join(",") + "," : ""}${constants_seo__WEBPACK_IMPORTED_MODULE_13__/* .siteKeyword */ .Ym}`
+                })
+            }),
             data && /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                 className: "question my-5",
                 children: [

@@ -5,8 +5,8 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/XDXakEY6gSPdgAODPxtjg/_buildManifest.js",
-    "static/XDXakEY6gSPdgAODPxtjg/_ssgManifest.js"
+    "static/eGqQHYKGZKE-nXShFn8wX/_buildManifest.js",
+    "static/eGqQHYKGZKE-nXShFn8wX/_ssgManifest.js"
   ],
   "rootMainFiles": [],
   "pages": {
@@ -17,15 +17,15 @@
       "static/chunks/29107295-fbcfe2172188e46f.js",
       "static/chunks/294-106ef8570fa99deb.js",
       "static/chunks/912-9618bcf05da7091d.js",
-      "static/chunks/596-ca2cf01d01e89f6d.js",
-      "static/chunks/pages/index-f5643f6b6a276a68.js"
+      "static/chunks/596-971e6593fb286f13.js",
+      "static/chunks/pages/index-dd8f8dd3af99eeb0.js"
     ],
     "/_app": [
       "static/chunks/webpack-42cdea76c8170223.js",
       "static/chunks/framework-4556c45dd113b893.js",
       "static/chunks/main-ccfab947c79712f4.js",
-      "static/css/08bcc42a26fe5c92.css",
-      "static/chunks/pages/_app-7e79b78ef884195a.js"
+      "static/css/4f7b2847abfe82c6.css",
+      "static/chunks/pages/_app-c0d2dcb5e85faf18.js"
     ],
     "/_error": [
       "static/chunks/webpack-42cdea76c8170223.js",
@@ -40,8 +40,8 @@
       "static/chunks/29107295-fbcfe2172188e46f.js",
       "static/chunks/294-106ef8570fa99deb.js",
       "static/chunks/912-9618bcf05da7091d.js",
-      "static/chunks/596-ca2cf01d01e89f6d.js",
-      "static/chunks/pages/questions-9cec11a6e8152425.js"
+      "static/chunks/596-971e6593fb286f13.js",
+      "static/chunks/pages/questions-c295449e4feb5506.js"
     ],
     "/questions/[slug]": [
       "static/chunks/webpack-42cdea76c8170223.js",
@@ -49,7 +49,7 @@
       "static/chunks/main-ccfab947c79712f4.js",
       "static/chunks/294-106ef8570fa99deb.js",
       "static/chunks/490-7f0418bb4354ac73.js",
-      "static/chunks/pages/questions/[slug]-c1a73f3e758d48b9.js"
+      "static/chunks/pages/questions/[slug]-50e201fdaa1e0fd1.js"
     ],
     "/questions/page/[page]": [
       "static/chunks/webpack-42cdea76c8170223.js",
@@ -58,7 +58,7 @@
       "static/chunks/29107295-fbcfe2172188e46f.js",
       "static/chunks/294-106ef8570fa99deb.js",
       "static/chunks/912-9618bcf05da7091d.js",
-      "static/chunks/596-ca2cf01d01e89f6d.js",
+      "static/chunks/596-971e6593fb286f13.js",
       "static/chunks/pages/questions/page/[page]-4c8d2612271cee88.js"
     ],
     "/questions/tag/[slug]": [
@@ -68,7 +68,7 @@
       "static/chunks/29107295-fbcfe2172188e46f.js",
       "static/chunks/294-106ef8570fa99deb.js",
       "static/chunks/912-9618bcf05da7091d.js",
-      "static/chunks/596-ca2cf01d01e89f6d.js",
+      "static/chunks/596-971e6593fb286f13.js",
       "static/chunks/pages/questions/tag/[slug]-e6668db30eb0d032.js"
     ],
     "/questions/tag/[slug]/page/[page]": [
@@ -78,7 +78,7 @@
       "static/chunks/29107295-fbcfe2172188e46f.js",
       "static/chunks/294-106ef8570fa99deb.js",
       "static/chunks/912-9618bcf05da7091d.js",
-      "static/chunks/596-ca2cf01d01e89f6d.js",
+      "static/chunks/596-971e6593fb286f13.js",
       "static/chunks/pages/questions/tag/[slug]/page/[page]-7fc07124d72d00c2.js"
     ]
   },

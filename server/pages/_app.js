@@ -10,14 +10,16 @@ exports.modules = {
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "JG": () => (/* binding */ siteDescription),
+/* harmony export */   "Ym": () => (/* binding */ siteKeyword),
 /* harmony export */   "aD": () => (/* binding */ siteName),
 /* harmony export */   "j1": () => (/* binding */ logoPath),
 /* harmony export */   "or": () => (/* binding */ siteUrl)
 /* harmony export */ });
-const siteName = "Solutions Checker";
-const siteDescription = "Find solution for coding, HTML, CSS, JAVASCRIPT, MYSQL, PHP, PYTHON,... quickly.";
+const siteName = "Solution Checker";
+const siteDescription = "Find the solution to any question. We focus on finding the fastest possible solution for users. Main topics like coding, learning.";
 const siteUrl = "https://solutionschecker.com";
 const logoPath = "/logo-second.png";
+const siteKeyword = "solutions checker, solution checker, how to, solution for, check for solution, resolve question, what is, what solution for, find solution";
 
 
 /***/ }),
@@ -69,7 +71,10 @@ const SEOConfig = {
 
 // EXTERNAL MODULE: external "next/router"
 var router_ = __webpack_require__(1853);
+// EXTERNAL MODULE: external "react"
+var external_react_ = __webpack_require__(6689);
 ;// CONCATENATED MODULE: ./pages/_app.js
+
 
 
 
@@ -80,6 +85,36 @@ var router_ = __webpack_require__(1853);
 // import GlobalStyle from '../components/Utils/globalstyles'
 function MyApp({ Component , pageProps  }) {
     const router = (0,router_.useRouter)();
+    (0,external_react_.useEffect)(()=>{
+        if (document && window) {
+            const externalLinks = [];
+            document.querySelectorAll("a").forEach((el)=>{
+                const targetUrl = new URL(el.href);
+                const mySiteUrl = new URL(window.location);
+                console.log(targetUrl, mySiteUrl);
+                if (targetUrl.hostname !== mySiteUrl.hostname) {
+                    el.rel = "nofollow noreferrer";
+                    el.target = "__blank";
+                }
+            });
+        }
+    }, []);
+    (0,external_react_.useEffect)(()=>{
+        if (document && window) {
+            const externalLinks = [];
+            document.querySelectorAll("a").forEach((el)=>{
+                const targetUrl = new URL(el.href);
+                const mySiteUrl = new URL(window.location);
+                console.log(targetUrl, mySiteUrl);
+                if (targetUrl.hostname !== mySiteUrl.hostname) {
+                    el.rel = "nofollow noreferrer";
+                    el.target = "__blank";
+                }
+            });
+        }
+    }, [
+        router.pathname
+    ]);
     return /*#__PURE__*/ (0,jsx_runtime_.jsxs)(jsx_runtime_.Fragment, {
         children: [
             /*#__PURE__*/ jsx_runtime_.jsx(external_next_seo_.DefaultSeo, {
@@ -117,6 +152,14 @@ module.exports = require("next-seo");
 
 "use strict";
 module.exports = require("next/router");
+
+/***/ }),
+
+/***/ 6689:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("react");
 
 /***/ }),
 

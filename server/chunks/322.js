@@ -29,22 +29,28 @@ function SolutionPagination({ hrefs , marginTop ="10px" , width  }) {
             });
         }
     };
-    return /*#__PURE__*/ jsx_runtime_.jsx("nav", {
+    return /*#__PURE__*/ (0,jsx_runtime_.jsxs)("nav", {
         className: "flex pagination-solution flex-col justify-end",
-        children: /*#__PURE__*/ jsx_runtime_.jsx("ul", {
-            className: "inline-flex -space-x-px overflow-auto",
-            children: (hrefs === null || hrefs === void 0 ? void 0 : hrefs.length) && hrefs.map((href, index)=>{
-                return /*#__PURE__*/ jsx_runtime_.jsx("li", {
-                    className: "pagination-solution-item",
-                    children: /*#__PURE__*/ jsx_runtime_.jsx("span", {
-                        "data-id": href,
-                        onClick: onPagination,
-                        className: "cursor-pointer py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white",
-                        children: index + 1
-                    })
-                }, index);
+        children: [
+            /*#__PURE__*/ jsx_runtime_.jsx("h1", {
+                className: "text-lg font-semibold mb-5",
+                children: "Navigate to solutions: "
+            }),
+            /*#__PURE__*/ jsx_runtime_.jsx("ul", {
+                className: "inline-flex -space-x-px overflow-auto",
+                children: (hrefs === null || hrefs === void 0 ? void 0 : hrefs.length) && hrefs.map((href, index)=>{
+                    return /*#__PURE__*/ jsx_runtime_.jsx("li", {
+                        className: "pagination-solution-item",
+                        children: /*#__PURE__*/ jsx_runtime_.jsx("span", {
+                            "data-id": href,
+                            onClick: onPagination,
+                            className: "cursor-pointer py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white",
+                            children: index + 1
+                        })
+                    }, index);
+                })
             })
-        })
+        ]
     });
 };
 
@@ -79,7 +85,7 @@ function SolutionSection({ answers , keywords  }) {
                                     justifyContent: "space-between"
                                 },
                                 children: [
-                                    /*#__PURE__*/ jsx_runtime_.jsx("h4", {
+                                    /*#__PURE__*/ jsx_runtime_.jsx("h1", {
                                         className: "text-4xl font-semibold mb-5",
                                         children: `Solution ${index + 1}`
                                     }),
@@ -192,7 +198,7 @@ function Header() {
                                         className: "mr-3 h-6 sm:h-9",
                                         alt: "Solution Checker Logo"
                                     }),
-                                    /*#__PURE__*/ jsx_runtime_.jsx("h4", {
+                                    /*#__PURE__*/ jsx_runtime_.jsx("h1", {
                                         className: "self-center text-xl font-semibold whitespace-nowrap dark:text-white",
                                         children: "Solution Checker"
                                     })
@@ -317,7 +323,31 @@ function Layout({ children  }) {
     return /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
         className: "wrapper",
         children: [
-            /*#__PURE__*/ jsx_runtime_.jsx((head_default()), {}),
+            /*#__PURE__*/ (0,jsx_runtime_.jsxs)((head_default()), {
+                children: [
+                    /*#__PURE__*/ jsx_runtime_.jsx("link", {
+                        rel: "apple-touch-icon",
+                        sizes: "180x180",
+                        href: "/apple-touch-icon.png"
+                    }),
+                    /*#__PURE__*/ jsx_runtime_.jsx("link", {
+                        rel: "icon",
+                        type: "image/png",
+                        sizes: "32x32",
+                        href: "/favicon-32x32.png"
+                    }),
+                    /*#__PURE__*/ jsx_runtime_.jsx("link", {
+                        rel: "icon",
+                        type: "image/png",
+                        sizes: "16x16",
+                        href: "/favicon-16x16.png"
+                    }),
+                    /*#__PURE__*/ jsx_runtime_.jsx("link", {
+                        rel: "manifest",
+                        href: "/site.webmanifest"
+                    })
+                ]
+            }),
             /*#__PURE__*/ jsx_runtime_.jsx(Header, {}),
             /*#__PURE__*/ jsx_runtime_.jsx("div", {
                 className: "main-content",
@@ -348,14 +378,16 @@ function Layout({ children  }) {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "JG": () => (/* binding */ siteDescription),
+/* harmony export */   "Ym": () => (/* binding */ siteKeyword),
 /* harmony export */   "aD": () => (/* binding */ siteName),
 /* harmony export */   "j1": () => (/* binding */ logoPath),
 /* harmony export */   "or": () => (/* binding */ siteUrl)
 /* harmony export */ });
-const siteName = "Solutions Checker";
-const siteDescription = "Find solution for coding, HTML, CSS, JAVASCRIPT, MYSQL, PHP, PYTHON,... quickly.";
+const siteName = "Solution Checker";
+const siteDescription = "Find the solution to any question. We focus on finding the fastest possible solution for users. Main topics like coding, learning.";
 const siteUrl = "https://solutionschecker.com";
 const logoPath = "/logo-second.png";
+const siteKeyword = "solutions checker, solution checker, how to, solution for, check for solution, resolve question, what is, what solution for, find solution";
 
 
 /***/ }),

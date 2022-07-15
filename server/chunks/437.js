@@ -81,7 +81,7 @@ function PostLayout({ slug , title , tags , answers  }) {
                                             onClick: ()=>{
                                                 setIsShowSolution(true);
                                             },
-                                            className: `btn bg-stone-500 cursor-pointer  hover:bg-stone-500 text-white font-bold py-2 px-4 rounded`,
+                                            className: `btn bg-stone-500 cursor-pointer mt-5  hover:bg-stone-500 text-white font-bold py-2 px-4 rounded`,
                                             children: "Show Solution"
                                         })
                                     })
@@ -92,6 +92,7 @@ function PostLayout({ slug , title , tags , answers  }) {
                 })
             }),
             isShowSolution && /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(components_Common_SolutionPopup__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {
+                title: title,
                 tags: tags,
                 onClose: ()=>{
                     setIsShowSolution(false);
@@ -130,7 +131,7 @@ lib_hook__WEBPACK_IMPORTED_MODULE_2__ = (__webpack_async_dependencies__.then ? (
 
 
 
-function SolutionPopup({ answers , onClose , tags  }) {
+function SolutionPopup({ answers , onClose , tags , title  }) {
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(antd__WEBPACK_IMPORTED_MODULE_1__.Modal, {
         footer: null,
         width: "90%",
@@ -141,17 +142,26 @@ function SolutionPopup({ answers , onClose , tags  }) {
             children: [
                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                     className: "flex justify-between items-center p-5 rounded-t border-b dark:border-gray-600",
-                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h3", {
+                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h1", {
                         className: "text-xl font-medium text-gray-900 dark:text-white",
                         children: "Solution"
                     })
                 }),
-                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                     className: "p-1 md:p-6 space-y-6",
-                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_SolutionSection__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z, {
-                        keywords: tags,
-                        answers: answers
-                    })
+                    children: [
+                        /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("h1", {
+                            className: "text-lg font-semibold",
+                            children: [
+                                "Topic: ",
+                                title
+                            ]
+                        }),
+                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_SolutionSection__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z, {
+                            keywords: tags,
+                            answers: answers
+                        })
+                    ]
                 })
             ]
         })
