@@ -82,11 +82,19 @@ function QuestionNews({ data , page , answers , randomQuestions  }) {
     var ref;
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(components_Layout__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z, {
         children: [
-            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_head__WEBPACK_IMPORTED_MODULE_7___default()), {
-                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("link", {
-                    name: "keywords",
-                    content: constants_seo__WEBPACK_IMPORTED_MODULE_11__/* .siteKeyword */ .Ym
-                })
+            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_head__WEBPACK_IMPORTED_MODULE_7___default()), {
+                children: [
+                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("title", {
+                        children: [
+                            "Questions - ",
+                            constants_seo__WEBPACK_IMPORTED_MODULE_11__/* .siteName */ .aD
+                        ]
+                    }),
+                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("link", {
+                        name: "keywords",
+                        content: constants_seo__WEBPACK_IMPORTED_MODULE_11__/* .siteKeyword */ .Ym
+                    })
+                ]
             }),
             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                 className: "inner-content",

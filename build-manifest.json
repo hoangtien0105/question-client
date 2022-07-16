@@ -5,8 +5,8 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/00bsHgHZki2FteshOatnd/_buildManifest.js",
-    "static/00bsHgHZki2FteshOatnd/_ssgManifest.js"
+    "static/5tS3Jli5j89_wXapXajXn/_buildManifest.js",
+    "static/5tS3Jli5j89_wXapXajXn/_ssgManifest.js"
   ],
   "rootMainFiles": [],
   "pages": {
@@ -25,7 +25,7 @@
       "static/chunks/framework-4556c45dd113b893.js",
       "static/chunks/main-ccfab947c79712f4.js",
       "static/css/c116652e2d6f4ad0.css",
-      "static/chunks/pages/_app-43d1c35cd6eb9b8f.js"
+      "static/chunks/pages/_app-260362324a06d105.js"
     ],
     "/_error": [
       "static/chunks/webpack-42cdea76c8170223.js",
@@ -41,7 +41,7 @@
       "static/chunks/294-106ef8570fa99deb.js",
       "static/chunks/912-9618bcf05da7091d.js",
       "static/chunks/596-971e6593fb286f13.js",
-      "static/chunks/pages/questions-c295449e4feb5506.js"
+      "static/chunks/pages/questions-eeb41228c055e4e8.js"
     ],
     "/questions/[slug]": [
       "static/chunks/webpack-42cdea76c8170223.js",
