@@ -2,7 +2,7 @@
 import PostLayout from 'components/Common/PostLayout';
 import QuestionWidgetPost from 'components/Common/QuestionWidgetPost';
 import Layout from 'components/Layout';
-import { siteKeyword } from 'constants/seo';
+import { siteKeyword, siteName } from 'constants/seo';
 import { decode } from 'html-entities';
 import requester from 'lib/api/requester';
 import { useQuestions } from 'lib/hook';
