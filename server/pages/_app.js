@@ -75,7 +75,13 @@ const SEOConfig = {
 var router_ = __webpack_require__(1853);
 // EXTERNAL MODULE: external "react"
 var external_react_ = __webpack_require__(6689);
+// EXTERNAL MODULE: external "next/head"
+var head_ = __webpack_require__(968);
+// EXTERNAL MODULE: ./node_modules/next/script.js
+var script = __webpack_require__(4298);
 ;// CONCATENATED MODULE: ./pages/_app.js
+
+
 
 
 
@@ -132,11 +138,35 @@ function MyApp({ Component , pageProps  }) {
 
 /***/ }),
 
+/***/ 4298:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__(699)
+
+
+/***/ }),
+
 /***/ 6641:
 /***/ ((module) => {
 
 "use strict";
 module.exports = require("next-seo");
+
+/***/ }),
+
+/***/ 2796:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/head-manager-context.js");
+
+/***/ }),
+
+/***/ 968:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/head");
 
 /***/ }),
 
@@ -171,7 +201,7 @@ module.exports = require("react/jsx-runtime");
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = (__webpack_exec__(6350));
+var __webpack_exports__ = __webpack_require__.X(0, [699], () => (__webpack_exec__(6350)));
 module.exports = __webpack_exports__;
 
 })();

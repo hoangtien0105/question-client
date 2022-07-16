@@ -144,7 +144,7 @@ function QuestionPost({ data , randomQuestions  }) {
                             upVoteCount: 500,
                             suggestedAnswer: data.answer.length ? data.answer.map((el, index)=>({
                                     text: cheerio__WEBPACK_IMPORTED_MODULE_8__.load((0,html_entities__WEBPACK_IMPORTED_MODULE_2__.decode)(el)).text(),
-                                    url: `${router.pathname}#solution${index + 1}`
+                                    url: `${next_sitemap_config__WEBPACK_IMPORTED_MODULE_11__.siteUrl}/questions/${data.slug}#solution${index + 1}`
                                 })) : []
                         }
                     }),
@@ -469,7 +469,7 @@ module.exports = import("cheerio");;
 var __webpack_require__ = require("../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [952,664,322], () => (__webpack_exec__(2081)));
+var __webpack_exports__ = __webpack_require__.X(0, [699,676,664,322], () => (__webpack_exec__(2081)));
 module.exports = __webpack_exports__;
 
 })();
