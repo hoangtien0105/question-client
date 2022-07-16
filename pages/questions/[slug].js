@@ -14,6 +14,8 @@ import { siteKeyword } from 'constants/seo';
 
 export default function QuestionPost({ data, randomQuestions }) {
   const router = useRouter();
+
+  
   return (
     <Layout>
       <Head>
@@ -50,7 +52,7 @@ export default function QuestionPost({ data, randomQuestions }) {
           upVoteCount: 500,
           suggestedAnswer: data.answer.length ? data.answer.map((el, index) => ({
             text: cheerio.load(decode(el)).text(),
-            url: `${router.pathname}#solution${index + 1}`,
+            url: `${siteUrl}/questions/${data.slug}#solution${index + 1}`,
           })) : []
         }} />
 

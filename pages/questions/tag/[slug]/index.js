@@ -36,7 +36,7 @@ export default function QuestionTags({ data, slug, page, answers, randomTags }) 
         {data && (((page) * 5 - data.count) >= 0) ? <span className={`pagination-buttons next bg-stone-500 cursor-not-allowed  hover:bg-stone-500 text-white font-bold py-2 px-4 rounded`}>Next</span> : <Link href={`/questions/tag/${slug}/page/${page + 1}`} ><a className={`pagination-buttons next bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded`}>Next</a></Link>}
       </div>
 
-      <TagWidgetPost data={randomTags}/>
+      <TagWidgetPost data={randomTags} />
     </Layout>
   )
 }
@@ -59,7 +59,7 @@ export const getStaticProps = async (ctx) => {
         answers,
         randomTags
       },
-      
+
 
     }
   } catch (err) {
@@ -67,24 +67,24 @@ export const getStaticProps = async (ctx) => {
     console.log(err);
     return {
       props: {
-        
+
       },
-      
+
     }
   }
 }
 
 
 export async function getStaticPaths() {
-    const allTags = await requester.getSync(`/getalltagsforseo`);
-    const paths = allTags.map((tag) => {
-      return {
-        params: { slug: tag.slug }
-      }
-    });
-  
+  const allTags = await requester.getSync(`/getalltagsforseo`);
+  const paths = allTags.map((tag) => {
     return {
-      paths,
-      fallback: false
+      params: { slug: tag.slug }
     }
+  });
+
+  return {
+    paths,
+    fallback: false
   }
+}

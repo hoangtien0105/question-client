@@ -5,6 +5,8 @@ import { siteName, siteUrl } from 'constants/seo';
 import SEOConfig from 'seo.config';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
+import Head from 'next/head';
+import Script from 'next/script';
 // import GlobalStyle from '../components/Utils/globalstyles'
 
 function MyApp({ Component, pageProps }) {
@@ -17,9 +19,10 @@ function MyApp({ Component, pageProps }) {
           el.rel = 'nofollow noreferrer';
           el.target = '__blank';
         }
-      })
-      
+      }) 
     }
+
+    
   }, [])
   useEffect(() => {
     if(document && window){
@@ -33,7 +36,6 @@ function MyApp({ Component, pageProps }) {
     }
   }, [router.pathname])
   return <>
-    
       <DefaultSeo
       {...SEOConfig}
       />
