@@ -19,6 +19,7 @@ export default function QuestionNews({data, page, answers, randomQuestions}) {
     return (
         <Layout> 
             <Head>
+              <title>Questions - {siteName}</title>
               <link name="keywords" content={siteKeyword}></link>
             </Head>
             <div className='inner-content'>

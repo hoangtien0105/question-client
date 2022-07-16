@@ -35,7 +35,6 @@ function MyApp({ Component, pageProps }) {
   return <>
     
       <DefaultSeo
-      canonical={router.pathName}
       {...SEOConfig}
       />
       <Component {...pageProps} />
